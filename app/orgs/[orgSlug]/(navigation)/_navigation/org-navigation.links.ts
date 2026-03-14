@@ -8,6 +8,7 @@ import {
   TriangleAlert,
   User,
   User2,
+  Target,
 } from "lucide-react";
 
 const replaceSlug = (href: string, slug: string): string =>
@@ -49,6 +50,11 @@ export const ORGANIZATION_LINKS: NavigationGroup[] = [
         href: ORGANIZATION_PATH,
         Icon: Home,
         label: "Dashboard",
+      },
+      {
+        href: `${ORGANIZATION_PATH}/pipeline`,
+        Icon: Target,
+        label: "Pipeline",
       },
       {
         href: `${ORGANIZATION_PATH}/users`,

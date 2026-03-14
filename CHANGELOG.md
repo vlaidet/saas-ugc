@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-03-14
+
+REFACTOR: Complete redesign of Pipeline UI with warm premium color palette (#FAF6F1, #EDE0D0, #3D2314, #C4621D)
+REFACTOR: Redesign pipeline-page.tsx with full-bleed background layout and custom header section
+REFACTOR: Redesign pipeline-counters.tsx as horizontal 4-column stats strip without card borders
+REFACTOR: Redesign pipeline-filters.tsx with inline compact filter bar featuring search with icon
+REFACTOR: Redesign brand-card.tsx with rounded-2xl cards, hover shadows, and colored niche badges
+REFACTOR: Redesign kanban-view.tsx with colored 3px top borders, drag-over visual feedback, empty state dashed borders
+REFACTOR: Redesign list-view.tsx with warm header styling and row hover effects
+FEATURE: Add "Pipeline de Prospection" feature for managing brand prospecting pipeline with Kanban and list views, contact history tracking, follow-up reminders, and localStorage persistence
+FEATURE: Add brand form dialog with TanStack Form validation for adding/editing brands
+FEATURE: Add contact history dialog for tracking brand interactions and responses
+FEATURE: Add pipeline counters showing total brands, contacted, in discussion, and deals signed
+FEATURE: Add pipeline filters by niche, status, channel, and search
+FEATURE: Add Target icon to organization navigation menu for Pipeline access
+
 ## 2026-02-16
 
 FEATURE: Add /api/status route with optional random number query parameter
