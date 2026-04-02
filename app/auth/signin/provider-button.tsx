@@ -1,20 +1,25 @@
+"use client";
+
 import { Logo } from "@/components/nowts/logo";
-import { Badge } from "@/components/ui/badge";
 import { LoadingButton } from "@/features/form/submit-button";
 import { authClient } from "@/lib/auth-client";
 import { getCallbackUrl } from "@/lib/auth/auth-utils";
-import { cn } from "@/lib/utils";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import type { ReactNode } from "react";
 
-const ProviderData: Record<string, { icon: ReactNode; name: string }> = {
+const ProviderData: Record<
+  string,
+  { icon: ReactNode; name: string; label: string }
+> = {
   github: {
     icon: <Logo name="github" size={16} />,
     name: "Github",
+    label: "Continuer avec Github",
   },
   google: {
     icon: <Logo name="google" size={16} />,
     name: "Google",
+    label: "Continuer avec Google",
   },
 };
 
@@ -33,44 +38,46 @@ export const ProviderButton = (props: ProviderButtonProps) => {
     staleTime: Infinity,
   });
 
-  const githubSignInMutation = useMutation({
+  const signInMutation = useMutation({
     mutationFn: async () => {
       await authClient.signIn.social({
         provider: props.providerId,
-        callbackURL: getCallbackUrl(props.callbackUrl ?? "/account"),
+        callbackURL: getCallbackUrl(props.callbackUrl ?? "/pipeline"),
       });
     },
   });
 
   const data = ProviderData[props.providerId];
-
   const isLastUsed = lastUsedProvider === props.providerId;
 
   return (
     <div className="relative w-full">
       {isLastUsed && (
-        <Badge
-          variant="secondary"
-          className="absolute -top-2.5 -right-2.5 z-10"
+        <span
+          className="absolute -top-2 -right-2 z-10 rounded-lg px-2 py-0.5 text-[10px] font-semibold"
+          style={{
+            backgroundColor: "#FEF3EB",
+            color: "#C4621D",
+            border: "1px solid #C4621D20",
+          }}
         >
-          Last used
-        </Badge>
+          Dernière utilisée
+        </span>
       )}
       <LoadingButton
-        loading={githubSignInMutation.isPending}
-        className={cn("w-full", {
-          "border bg-white text-black hover:bg-white dark:border-neutral-700":
-            data.name === "Google",
-          "border bg-black text-white hover:bg-gray-950 dark:border-neutral-700":
-            data.name === "Github",
-        })}
+        loading={signInMutation.isPending}
+        className="w-full cursor-pointer rounded-xl text-sm font-medium transition-all hover:shadow-sm"
+        variant="outline"
         size="lg"
-        onClick={() => {
-          githubSignInMutation.mutate();
+        onClick={() => signInMutation.mutate()}
+        style={{
+          borderColor: "#EDE0D0",
+          color: "#3D2314",
+          backgroundColor: "white",
         }}
       >
         {data.icon}
-        <span className="ml-2">Sign in with {data.name}</span>
+        <span className="ml-2">{data.label}</span>
       </LoadingButton>
     </div>
   );

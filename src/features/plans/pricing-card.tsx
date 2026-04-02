@@ -189,8 +189,8 @@ export function PricingCard({
             upgradeOrg({
               plan: plan.name,
               annual: isYearly,
-              successUrl: `/orgs/${activeOrg.slug}/settings/billing/success`,
-              cancelUrl: `/orgs/${activeOrg.slug}/settings/billing`,
+              successUrl: `/pipeline/billing/success`,
+              cancelUrl: `/pipeline/billing`,
             });
           }}
         >

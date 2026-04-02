@@ -1,13 +1,5 @@
 "use client";
 
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
 import { LoadingButton } from "@/features/form/submit-button";
 import { authClient } from "@/lib/auth-client";
 import { unwrapSafePromise } from "@/lib/promises";
@@ -31,7 +23,7 @@ export function ConfirmDeletePage({
   const confirmDeleteMutation = useMutation({
     mutationFn: async () => {
       if (!token) {
-        throw new Error("Invalid token");
+        throw new Error("Token invalide");
       }
       return unwrapSafePromise(
         authClient.deleteUser({
@@ -39,9 +31,9 @@ export function ConfirmDeletePage({
         }),
       );
     },
-    onError: (error) => {
-      setError(error.message);
-      toast.error(error.message);
+    onError: (err) => {
+      setError(err.message);
+      toast.error(err.message);
     },
     onSuccess: () => {
       router.push(callbackUrl);
@@ -54,49 +46,64 @@ export function ConfirmDeletePage({
   };
 
   const handleCancel = () => {
-    router.push("/account");
+    router.push("/pipeline/settings");
   };
 
   if (!token) {
-    router.push("/account");
+    router.push("/pipeline/settings");
     return null;
   }
 
   return (
-    <Card className="mx-auto w-full max-w-md">
-      <CardHeader>
-        <div className="flex justify-center">
-          <Avatar className="size-16">
-            <AvatarFallback>
-              <Trash2 />
-            </AvatarFallback>
-          </Avatar>
+    <div
+      className="rounded-2xl bg-white p-8"
+      style={{
+        border: "1px solid #EDE0D0",
+        boxShadow:
+          "0 4px 24px rgba(61,35,20,0.08), 0 1px 4px rgba(61,35,20,0.04)",
+      }}
+    >
+      <div className="mb-6 text-center">
+        <div className="mb-4 flex justify-center">
+          <div
+            className="flex h-14 w-14 items-center justify-center rounded-2xl"
+            style={{ backgroundColor: "#FEF2F2" }}
+          >
+            <Trash2 className="h-7 w-7" style={{ color: "#DC2626" }} />
+          </div>
         </div>
-        <CardHeader className="text-center">
-          Confirm Account Deletion
-        </CardHeader>
+        <h1 className="text-xl font-bold" style={{ color: "#3D2314" }}>
+          Supprimer votre compte
+        </h1>
+        <p className="mt-1.5 text-sm" style={{ color: "#A89880" }}>
+          Cette action est définitive et irréversible. Toutes vos données seront
+          supprimées.
+        </p>
+      </div>
 
-        <CardDescription className="text-center">
-          Are you sure you want to delete your account? This action is permanent
-          and cannot be undone.
-        </CardDescription>
-      </CardHeader>
-      <CardFooter className="border-t pt-6">
-        {error && <div className="mb-4 text-red-500">{error}</div>}
-        <div className="flex w-full gap-4">
+      <div className="border-t pt-6" style={{ borderColor: "#EDE0D0" }}>
+        {error && <p className="mb-4 text-sm text-red-600">{error}</p>}
+        <div className="flex gap-3">
           <LoadingButton
             loading={isLoading || confirmDeleteMutation.isPending}
-            variant="destructive"
             onClick={handleConfirmDelete}
-            className="flex-1"
+            className="flex-1 cursor-pointer rounded-xl text-sm font-semibold text-white"
+            style={{ backgroundColor: "#DC2626" }}
           >
-            Yes, Delete My Account
+            Oui, supprimer mon compte
           </LoadingButton>
-          <Button variant="outline" onClick={handleCancel} className="flex-1">
-            Cancel
-          </Button>
+          <button
+            onClick={handleCancel}
+            className="flex-1 cursor-pointer rounded-xl py-2.5 text-sm font-semibold transition-all hover:opacity-70"
+            style={{
+              border: "1px solid #EDE0D0",
+              color: "#6B4226",
+            }}
+          >
+            Annuler
+          </button>
         </div>
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   );
 }

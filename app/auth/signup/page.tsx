@@ -1,13 +1,4 @@
 import { Loader } from "@/components/nowts/loader";
-import { Typography } from "@/components/nowts/typography";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { getUser } from "@/lib/auth/auth-user";
 import { SiteConfig } from "@/site-config";
 import type { Metadata } from "next";
@@ -17,52 +8,57 @@ import { Suspense } from "react";
 import { SignUpCredentialsForm } from "./sign-up-credentials-form";
 
 export const metadata: Metadata = {
-  title: `Sign Up | ${SiteConfig.title}`,
-  description:
-    "Create your account to start collecting powerful testimonials for your projects.",
+  title: `Inscription | ${SiteConfig.title}`,
+  description: "Créez votre compte pour commencer à gérer votre pipeline.",
 };
 
 export default function Page() {
   return (
     <Suspense fallback={null}>
-      <AuthSignInPage />
+      <AuthSignUpPage />
     </Suspense>
   );
 }
 
-async function AuthSignInPage() {
+async function AuthSignUpPage() {
   const user = await getUser();
 
   if (user) {
-    redirect("/");
+    redirect("/pipeline");
   }
 
   return (
-    <Card className="mx-auto w-full max-w-md lg:max-w-lg lg:p-6">
-      <CardHeader className="flex flex-col items-center justify-center gap-1">
-        <Avatar className="mb-4 rounded-sm">
-          <AvatarImage src={SiteConfig.appIcon} alt="app logo" />
-          <AvatarFallback>
-            {SiteConfig.title.substring(0, 1).toUpperCase()}
-          </AvatarFallback>
-        </Avatar>
-        <CardTitle>Sign up to {SiteConfig.title}</CardTitle>
-        <CardDescription>
-          We just need a few details to get you started.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Suspense fallback={<Loader />}>
-          <SignUpCredentialsForm />
-        </Suspense>
+    <div
+      className="rounded-2xl bg-white p-8"
+      style={{
+        border: "1px solid #EDE0D0",
+        boxShadow:
+          "0 4px 24px rgba(61,35,20,0.08), 0 1px 4px rgba(61,35,20,0.04)",
+      }}
+    >
+      <div className="mb-6 text-center">
+        <h1 className="text-xl font-bold" style={{ color: "#3D2314" }}>
+          Créer un compte
+        </h1>
+        <p className="mt-1.5 text-sm" style={{ color: "#A89880" }}>
+          Quelques informations pour commencer
+        </p>
+      </div>
 
-        <Typography variant="muted" className="mt-4 text-xs">
-          You already have an account?{" "}
-          <Typography variant="link" as={Link} href="/auth/signin">
-            Sign in
-          </Typography>
-        </Typography>
-      </CardContent>
-    </Card>
+      <Suspense fallback={<Loader />}>
+        <SignUpCredentialsForm />
+      </Suspense>
+
+      <p className="mt-5 text-center text-xs" style={{ color: "#A89880" }}>
+        Déjà un compte ?{" "}
+        <Link
+          href="/auth/signin"
+          className="font-medium underline underline-offset-2 transition-opacity hover:opacity-70"
+          style={{ color: "#C4621D" }}
+        >
+          Se connecter
+        </Link>
+      </p>
+    </div>
   );
 }

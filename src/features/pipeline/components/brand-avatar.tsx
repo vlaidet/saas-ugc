@@ -10,9 +10,9 @@ interface BrandAvatarProps {
 
 export function BrandAvatar({ name, niche, size = "md" }: BrandAvatarProps) {
   const sizeClasses = {
-    sm: "w-8 h-8 text-xs",
-    md: "w-10 h-10 text-sm",
-    lg: "w-12 h-12 text-base",
+    sm: "w-7 h-7 text-[10px] rounded-lg",
+    md: "w-9 h-9 text-xs rounded-xl",
+    lg: "w-11 h-11 text-sm rounded-2xl",
   };
 
   const initials = name
@@ -27,7 +27,7 @@ export function BrandAvatar({ name, niche, size = "md" }: BrandAvatarProps) {
   return (
     <div
       className={cn(
-        "flex flex-shrink-0 items-center justify-center rounded-full font-semibold text-white",
+        "flex flex-shrink-0 items-center justify-center font-bold text-white",
         sizeClasses[size],
       )}
       style={{ backgroundColor }}

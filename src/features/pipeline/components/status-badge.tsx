@@ -1,24 +1,18 @@
-import { Badge } from "@/components/ui/badge";
 import type { BrandStatus } from "../types";
-import { STATUS_COLORS } from "../constants";
+import { STATUS_CONFIG } from "../constants";
 
-interface StatusBadgeProps {
-  status: BrandStatus;
-}
-
-export function StatusBadge({ status }: StatusBadgeProps) {
-  const colors = STATUS_COLORS[status];
-
+export function StatusBadge({ status }: { status: BrandStatus }) {
+  const conf = STATUS_CONFIG[status];
   return (
-    <Badge
-      className="pointer-events-none"
-      style={{
-        backgroundColor: colors.bg,
-        color: colors.text,
-        borderColor: colors.border,
-      }}
+    <span
+      className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium"
+      style={{ backgroundColor: conf.bg, color: conf.text }}
     >
+      <span
+        className="h-1.5 w-1.5 flex-shrink-0 rounded-full"
+        style={{ backgroundColor: conf.dot }}
+      />
       {status}
-    </Badge>
+    </span>
   );
 }

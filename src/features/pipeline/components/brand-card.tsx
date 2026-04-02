@@ -1,8 +1,13 @@
-import { Edit2, Trash2, Clock, Bell } from "lucide-react";
+import { Edit2, Trash2, Clock, TriangleAlert } from "lucide-react";
+import { InlineTooltip } from "@/components/ui/tooltip";
 import type { Brand } from "../types";
 import { BrandAvatar } from "./brand-avatar";
 import { StatusBadge } from "./status-badge";
+import { ChannelBadge } from "./channel-badge";
 import { NICHE_COLORS } from "../constants";
+
+const warmTooltip =
+  "rounded-lg bg-[#3D2314] px-2.5 py-1 text-xs text-white shadow-lg [&>svg]:fill-[#3D2314]";
 
 interface BrandCardProps {
   brand: Brand;
@@ -11,6 +16,7 @@ interface BrandCardProps {
   onHistory: () => void;
   onDragStart: (id: string) => void;
   needsFollowUp: boolean;
+  isDragging?: boolean;
 }
 
 export function BrandCard({
@@ -20,6 +26,7 @@ export function BrandCard({
   onHistory,
   onDragStart,
   needsFollowUp,
+  isDragging = false,
 }: BrandCardProps) {
   const nicheColor = NICHE_COLORS[brand.niche];
 
@@ -30,108 +37,133 @@ export function BrandCard({
         e.dataTransfer.setData("brandId", brand.id);
         onDragStart(brand.id);
       }}
-      className="cursor-grab rounded-2xl bg-white p-4 transition-all duration-200 active:scale-[0.98] active:cursor-grabbing active:opacity-80"
+      onClick={onEdit}
+      className="group relative cursor-pointer rounded-2xl bg-white p-3.5 transition-all duration-150 active:scale-[0.97] active:cursor-grabbing active:opacity-70"
       style={{
-        boxShadow: "0 2px 8px rgba(61,35,20,0.08)",
-      }}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow =
-          "0 6px 20px rgba(61,35,20,0.14)";
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow =
-          "0 2px 8px rgba(61,35,20,0.08)";
+        boxShadow:
+          "0 1px 3px rgba(61,35,20,0.07), 0 1px 2px rgba(61,35,20,0.05)",
+        opacity: isDragging ? 0.4 : 1,
       }}
     >
-      {/* Header: avatar + name + niche */}
-      <div className="flex items-start gap-3">
+      {/* BRAND HEADER */}
+      <div className="flex items-start gap-2.5">
         <BrandAvatar name={brand.name} niche={brand.niche} size="md" />
         <div className="min-w-0 flex-1">
-          <p
-            className="truncate text-sm leading-tight font-bold"
-            style={{ color: "#3D2314" }}
-          >
-            {brand.name}
-          </p>
-          <span
-            className="mt-1 inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold"
-            style={{ backgroundColor: `${nicheColor}18`, color: nicheColor }}
-          >
-            {brand.niche}
-          </span>
+          <div className="flex items-start justify-between gap-2">
+            <p
+              className="truncate text-sm leading-tight font-bold"
+              style={{ color: "#3D2314" }}
+            >
+              {brand.name}
+            </p>
+            {needsFollowUp && (
+              <span title="Relancer" className="mt-0.5 flex-shrink-0">
+                <TriangleAlert
+                  className="h-3.5 w-3.5"
+                  style={{ color: "#D97706" }}
+                />
+              </span>
+            )}
+          </div>
+          <div className="mt-0.5 flex items-center gap-1.5">
+            <span
+              className="h-1.5 w-1.5 flex-shrink-0 rounded-full"
+              style={{ backgroundColor: nicheColor }}
+            />
+            <span className="text-[11px]" style={{ color: "#A89880" }}>
+              {brand.niche}
+            </span>
+          </div>
         </div>
       </div>
 
-      {/* Status */}
+      {/* STATUS */}
       <div className="mt-3">
         <StatusBadge status={brand.status} />
       </div>
 
-      {/* Follow-up alert */}
+      {/* RELANCER */}
       {needsFollowUp && (
         <div
-          className="mt-2 flex items-center gap-1.5 rounded-lg px-2.5 py-1.5"
-          style={{ backgroundColor: "#FEF3C7" }}
+          className="mt-2 flex items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-xs font-medium"
+          style={{ backgroundColor: "#FFFBEB", color: "#B45309" }}
         >
-          <Bell
-            className="h-3 w-3 flex-shrink-0"
-            style={{ color: "#D97706" }}
-          />
-          <span className="text-xs font-semibold" style={{ color: "#D97706" }}>
-            Relancer
-          </span>
+          <TriangleAlert className="h-3 w-3 flex-shrink-0" />
+          Relancer — sans réponse depuis +7j
         </div>
       )}
 
-      {/* Meta info row */}
-      <div className="mt-3 flex items-center justify-between">
-        <span className="text-xs" style={{ color: "#A89880" }}>
-          {brand.contacts.length} contact
-          {brand.contacts.length !== 1 ? "s" : ""}
-        </span>
-        <span
-          className="rounded-full px-2 py-0.5 text-xs font-medium"
-          style={{ backgroundColor: "#FAF6F1", color: "#6B4226" }}
-        >
-          {brand.channel}
-        </span>
-      </div>
-
-      {/* Actions divider + buttons */}
+      {/* FOOTER */}
       <div
-        className="mt-3 flex items-center justify-end gap-0.5 border-t pt-2"
-        style={{ borderColor: "#EDE0D0" }}
+        className="mt-3 flex items-center justify-between border-t pt-2.5"
+        style={{ borderColor: "#F0E8DF" }}
       >
-        <button
-          onClick={onEdit}
-          className="rounded-lg p-1.5 transition-colors hover:bg-[#FAF6F1]"
-          title="Éditer"
+        <div
+          className="flex items-center gap-2 text-xs"
           style={{ color: "#A89880" }}
         >
-          <Edit2 className="h-3.5 w-3.5" />
-        </button>
-        <button
-          onClick={onHistory}
-          className="rounded-lg p-1.5 transition-colors hover:bg-[#FAF6F1]"
-          title="Historique"
-          style={{ color: "#A89880" }}
-        >
-          <Clock className="h-3.5 w-3.5" />
-        </button>
-        <button
-          onClick={onDelete}
-          className="rounded-lg p-1.5 transition-colors hover:bg-red-50"
-          title="Supprimer"
-          style={{ color: "#A89880" }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.color = "#EF4444";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.color = "#A89880";
-          }}
-        >
-          <Trash2 className="h-3.5 w-3.5" />
-        </button>
+          <span
+            className="inline-flex items-center justify-center rounded-full px-1.5 py-0.5 text-[10px] font-semibold"
+            style={{
+              backgroundColor:
+                brand.contacts.length > 0 ? "#F0E8DF" : "#F5F0EB",
+              color: brand.contacts.length > 0 ? "#6B4226" : "#A89880",
+              minWidth: "20px",
+            }}
+          >
+            {brand.contacts.length}
+          </span>
+          <span className="h-2.5 w-px" style={{ backgroundColor: "#EDE0D0" }} />
+          <ChannelBadge channel={brand.channel} size="sm" />
+        </div>
+
+        <div className="flex items-center opacity-40 transition-opacity duration-150 group-hover:opacity-100">
+          <InlineTooltip title="Éditer" className={warmTooltip}>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onEdit();
+              }}
+              className="cursor-pointer rounded-lg p-1.5 transition-colors hover:bg-[#FAF6F1]"
+              style={{ color: "#6B4226" }}
+            >
+              <Edit2 className="h-3 w-3" />
+            </button>
+          </InlineTooltip>
+          <InlineTooltip
+            title="Historique des contacts"
+            className={warmTooltip}
+          >
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onHistory();
+              }}
+              className="cursor-pointer rounded-lg p-1.5 transition-colors hover:bg-[#FAF6F1]"
+              style={{ color: "#6B4226" }}
+            >
+              <Clock className="h-3 w-3" />
+            </button>
+          </InlineTooltip>
+          <InlineTooltip title="Supprimer" className={warmTooltip}>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onDelete();
+              }}
+              className="cursor-pointer rounded-lg p-1.5 transition-colors hover:bg-red-50"
+              style={{ color: "#6B4226" }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.color = "#DC2626";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.color = "#6B4226";
+              }}
+            >
+              <Trash2 className="h-3 w-3" />
+            </button>
+          </InlineTooltip>
+        </div>
       </div>
     </div>
   );

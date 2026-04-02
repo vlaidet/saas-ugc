@@ -19,7 +19,7 @@ export const handleRootRedirect = (request: NextRequest) => {
   if (!session) return null;
 
   const url = request.nextUrl.clone();
-  url.pathname = "/orgs";
+  url.pathname = "/pipeline";
   return NextResponse.redirect(url);
 };
 
@@ -128,7 +128,7 @@ export const getFirstUserOrganization = async (userId: string) => {
 
 export const redirectToOrgList = (request: NextRequest) => {
   const url = request.nextUrl.clone();
-  url.pathname = "/orgs";
+  url.pathname = "/pipeline";
   return NextResponse.redirect(url);
 };
 

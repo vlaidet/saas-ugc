@@ -1,59 +1,53 @@
 import type { Brand } from "../types";
-import {
-  TrendingUp,
-  MessageSquare,
-  Handshake,
-  CheckCircle2,
-} from "lucide-react";
+import { TrendingUp, Mail, MessageCircle, CheckCircle2 } from "lucide-react";
 
-interface PipelineCountersProps {
-  brands: Brand[];
-}
-
-export function PipelineCounters({ brands }: PipelineCountersProps) {
-  const total = brands.length;
-  const contacted = brands.filter((b) => b.status === "Contactée").length;
-  const discussing = brands.filter((b) => b.status === "En discussion").length;
-  const deals = brands.filter((b) => b.status === "Deal signé").length;
-
+export function PipelineCounters({ brands }: { brands: Brand[] }) {
   const stats = [
     {
-      label: "Total marques",
-      value: total,
+      label: "Total",
+      sublabel: "marques",
+      value: brands.length,
       Icon: TrendingUp,
       color: "#C4621D",
+      bg: "#FEF3EB",
     },
     {
       label: "Contactées",
-      value: contacted,
-      Icon: MessageSquare,
-      color: "#3B82F6",
+      sublabel: "en attente",
+      value: brands.filter((b) => b.status === "Contactée").length,
+      Icon: Mail,
+      color: "#2563EB",
+      bg: "#EFF6FF",
     },
     {
       label: "En discussion",
-      value: discussing,
-      Icon: Handshake,
-      color: "#F59E0B",
+      sublabel: "en cours",
+      value: brands.filter((b) => b.status === "En discussion").length,
+      Icon: MessageCircle,
+      color: "#D97706",
+      bg: "#FFFBEB",
     },
     {
       label: "Deals signés",
-      value: deals,
+      sublabel: "conclus",
+      value: brands.filter((b) => b.status === "Deal signé").length,
       Icon: CheckCircle2,
-      color: "#10B981",
+      color: "#059669",
+      bg: "#ECFDF5",
     },
   ];
 
   return (
     <div
-      className="grid grid-cols-4 divide-x"
-      style={{
-        borderBottom: "1px solid #EDE0D0",
-        borderBottomColor: "#EDE0D0",
-        borderRightColor: "#EDE0D0",
-      }}
+      className="grid grid-cols-2 gap-3 px-6 py-4 lg:grid-cols-4"
+      style={{ borderBottom: "1px solid #EDE0D0" }}
     >
-      {stats.map(({ label, value, Icon, color }) => (
-        <div key={label} className="flex items-center gap-4 px-6 py-5">
+      {stats.map(({ label, sublabel, value, Icon, color, bg }) => (
+        <div
+          key={label}
+          className="flex items-center gap-3 rounded-2xl p-4"
+          style={{ backgroundColor: bg, border: `1px solid ${color}20` }}
+        >
           <div
             className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl"
             style={{ backgroundColor: `${color}18` }}
@@ -61,15 +55,21 @@ export function PipelineCounters({ brands }: PipelineCountersProps) {
             <Icon className="h-5 w-5" style={{ color }} />
           </div>
           <div>
-            <div className="text-3xl font-bold" style={{ color: "#3D2314" }}>
+            <p
+              className="text-2xl leading-none font-bold"
+              style={{ color: "#3D2314" }}
+            >
               {value}
-            </div>
-            <div
-              className="mt-0.5 text-xs font-medium"
-              style={{ color: "#A89880" }}
+            </p>
+            <p
+              className="mt-1 text-xs leading-tight font-medium"
+              style={{ color }}
             >
               {label}
-            </div>
+            </p>
+            <p className="text-[11px]" style={{ color: "#A89880" }}>
+              {sublabel}
+            </p>
           </div>
         </div>
       ))}

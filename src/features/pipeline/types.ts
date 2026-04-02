@@ -37,11 +37,25 @@ export type Brand = {
   createdAt: string; // ISO string
 };
 
+export type DateRangePreset =
+  | "all"
+  | "today"
+  | "this_week"
+  | "last_week"
+  | "this_month"
+  | "last_month"
+  | "this_year"
+  | "last_year"
+  | "custom";
+
 export type PipelineFilters = {
   niche: BrandNiche | "all";
   status: BrandStatus | "all";
   channel: ContactChannel | "all";
   search: string;
+  datePreset: DateRangePreset;
+  dateFrom: string;
+  dateTo: string;
 };
 
 export type PipelineView = "kanban" | "list";

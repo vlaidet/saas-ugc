@@ -4,9 +4,9 @@ import { Suspense } from "react";
 import { ConfirmDeletePage } from "./confirm-delete-page";
 
 export const metadata: Metadata = {
-  title: `Confirm Account Deletion | ${SiteConfig.title}`,
+  title: `Suppression du compte | ${SiteConfig.title}`,
   description:
-    "Confirm that you want to permanently delete your account and all associated data.",
+    "Confirmez la suppression définitive de votre compte et de toutes vos données.",
 };
 
 export default function Page(props: PageProps<"/auth/confirm-delete">) {

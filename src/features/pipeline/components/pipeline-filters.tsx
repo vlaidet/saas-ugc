@@ -1,109 +1,151 @@
-import { Search } from "lucide-react";
+"use client";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
 } from "@/components/ui/select";
+import { X, ChevronDown } from "lucide-react";
 import type { PipelineFilters } from "../types";
 import { NICHES, CHANNELS, STATUSES } from "../constants";
 
-interface PipelineFiltersProps {
+type PipelineFiltersProps = {
   filters: PipelineFilters;
   onFilterChange: (key: keyof PipelineFilters, value: string) => void;
-}
+};
+
+const warmSelectContent =
+  "rounded-xl border-[#EDE0D0] bg-white p-1.5 shadow-xl shadow-[#3D2314]/8 animate-in fade-in-0 zoom-in-95 duration-150";
+
+const warmSelectItem =
+  "rounded-lg pl-3 pr-8 py-2 text-sm font-medium cursor-pointer transition-colors duration-100 focus:bg-[#FAF6F1] focus:text-[#3D2314] text-[#6B4226]";
 
 export function PipelineFilters({
   filters,
   onFilterChange,
 }: PipelineFiltersProps) {
-  return (
-    <div className="flex items-center gap-3">
-      <div className="relative max-w-xs flex-1">
-        <Search
-          className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2"
-          style={{ color: "#A89880" }}
-        />
-        <input
-          type="text"
-          placeholder="Chercher une marque..."
-          value={filters.search}
-          onChange={(e) => onFilterChange("search", e.target.value)}
-          className="w-full rounded-lg border py-2 pr-3 pl-9 text-sm"
-          style={{
-            borderColor: "#EDE0D0",
-            color: "#3D2314",
-            backgroundColor: "#FFFFFF",
-          }}
-          onFocus={(e) => {
-            e.currentTarget.style.borderColor = "#C4621D";
-          }}
-          onBlur={(e) => {
-            e.currentTarget.style.borderColor = "#EDE0D0";
-          }}
-        />
-      </div>
+  const hasActiveFilters =
+    filters.niche !== "all" ||
+    filters.status !== "all" ||
+    filters.channel !== "all";
 
+  const clearAll = () => {
+    onFilterChange("niche", "all");
+    onFilterChange("status", "all");
+    onFilterChange("channel", "all");
+  };
+
+  const nicheActive = filters.niche !== "all";
+  const statusActive = filters.status !== "all";
+  const channelActive = filters.channel !== "all";
+
+  return (
+    <div className="flex items-center gap-2">
+      {/* Niche */}
       <Select
         value={filters.niche}
-        onValueChange={(value) => onFilterChange("niche", value)}
+        onValueChange={(v) => onFilterChange("niche", v)}
       >
         <SelectTrigger
-          className="w-[180px]"
-          style={{ borderColor: "#EDE0D0", color: "#6B4226" }}
+          className="h-8 cursor-pointer gap-1 rounded-lg px-3 text-sm font-medium shadow-none ring-0 transition-all duration-150 focus:ring-0 [&>svg]:hidden"
+          style={{
+            backgroundColor: nicheActive ? "#FEF3ED" : "#F5F0EB",
+            border: `1px solid ${nicheActive ? "rgba(196,98,29,0.3)" : "#E5D8CC"}`,
+            color: nicheActive ? "#C4621D" : "#6B4226",
+          }}
         >
-          <SelectValue placeholder="Niche" />
+          <span className="truncate">
+            {filters.niche === "all" ? "Toutes les niches" : filters.niche}
+          </span>
+          <ChevronDown className="ml-1 h-3 w-3 flex-shrink-0 opacity-60" />
         </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">Toutes les niches</SelectItem>
-          {NICHES.map((niche) => (
-            <SelectItem key={niche} value={niche}>
-              {niche}
+        <SelectContent className={warmSelectContent}>
+          <SelectItem value="all" className={warmSelectItem}>
+            Toutes les niches
+          </SelectItem>
+          {NICHES.map((n) => (
+            <SelectItem key={n} value={n} className={warmSelectItem}>
+              {n}
             </SelectItem>
           ))}
         </SelectContent>
       </Select>
 
+      {/* Status */}
       <Select
         value={filters.status}
-        onValueChange={(value) => onFilterChange("status", value)}
+        onValueChange={(v) => onFilterChange("status", v)}
       >
         <SelectTrigger
-          className="w-[180px]"
-          style={{ borderColor: "#EDE0D0", color: "#6B4226" }}
+          className="h-8 cursor-pointer gap-1 rounded-lg px-3 text-sm font-medium shadow-none ring-0 transition-all duration-150 focus:ring-0 [&>svg]:hidden"
+          style={{
+            backgroundColor: statusActive ? "#FEF3ED" : "#F5F0EB",
+            border: `1px solid ${statusActive ? "rgba(196,98,29,0.3)" : "#E5D8CC"}`,
+            color: statusActive ? "#C4621D" : "#6B4226",
+          }}
         >
-          <SelectValue placeholder="Statut" />
+          <span className="truncate">
+            {filters.status === "all" ? "Tous les statuts" : filters.status}
+          </span>
+          <ChevronDown className="ml-1 h-3 w-3 flex-shrink-0 opacity-60" />
         </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">Tous les statuts</SelectItem>
-          {STATUSES.map((status) => (
-            <SelectItem key={status} value={status}>
-              {status}
+        <SelectContent className={warmSelectContent}>
+          <SelectItem value="all" className={warmSelectItem}>
+            Tous les statuts
+          </SelectItem>
+          {STATUSES.map((s) => (
+            <SelectItem key={s} value={s} className={warmSelectItem}>
+              {s}
             </SelectItem>
           ))}
         </SelectContent>
       </Select>
 
+      {/* Channel */}
       <Select
         value={filters.channel}
-        onValueChange={(value) => onFilterChange("channel", value)}
+        onValueChange={(v) => onFilterChange("channel", v)}
       >
         <SelectTrigger
-          className="w-[180px]"
-          style={{ borderColor: "#EDE0D0", color: "#6B4226" }}
+          className="h-8 cursor-pointer gap-1 rounded-lg px-3 text-sm font-medium shadow-none ring-0 transition-all duration-150 focus:ring-0 [&>svg]:hidden"
+          style={{
+            backgroundColor: channelActive ? "#FEF3ED" : "#F5F0EB",
+            border: `1px solid ${channelActive ? "rgba(196,98,29,0.3)" : "#E5D8CC"}`,
+            color: channelActive ? "#C4621D" : "#6B4226",
+          }}
         >
-          <SelectValue placeholder="Canal" />
+          <span className="truncate">
+            {filters.channel === "all" ? "Tous les canaux" : filters.channel}
+          </span>
+          <ChevronDown className="ml-1 h-3 w-3 flex-shrink-0 opacity-60" />
         </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">Tous les canaux</SelectItem>
-          {CHANNELS.map((channel) => (
-            <SelectItem key={channel} value={channel}>
-              {channel}
+        <SelectContent className={warmSelectContent}>
+          <SelectItem value="all" className={warmSelectItem}>
+            Tous les canaux
+          </SelectItem>
+          {CHANNELS.map((c) => (
+            <SelectItem key={c} value={c} className={warmSelectItem}>
+              {c}
             </SelectItem>
           ))}
         </SelectContent>
       </Select>
+
+      {/* Effacer */}
+      {hasActiveFilters && (
+        <button
+          onClick={clearAll}
+          className="flex h-8 items-center gap-1.5 rounded-lg px-3 text-xs font-medium transition-all duration-150"
+          style={{
+            backgroundColor: "#F5F0EB",
+            border: "1px solid #E5D8CC",
+            color: "#A89880",
+          }}
+        >
+          <X className="h-3 w-3" />
+          Effacer
+        </button>
+      )}
     </div>
   );
 }

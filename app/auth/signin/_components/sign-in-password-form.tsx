@@ -11,7 +11,7 @@ import { z } from "zod";
 
 const LoginCredentialsFormScheme = z.object({
   email: z.string().email(),
-  password: z.string().min(1, "Password is required"),
+  password: z.string().min(1, "Le mot de passe est requis"),
 });
 
 type LoginCredentialsFormType = z.infer<typeof LoginCredentialsFormScheme>;
@@ -34,7 +34,7 @@ export const SignInPasswordForm = (props: {
       toast.error(error.message);
     },
     onSuccess: () => {
-      const callbackUrl = getCallbackUrl(props.callbackUrl ?? "/orgs");
+      const callbackUrl = getCallbackUrl(props.callbackUrl ?? "/pipeline");
       window.location.href = callbackUrl;
     },
   });
@@ -59,7 +59,7 @@ export const SignInPasswordForm = (props: {
           <field.Field>
             <field.Label>Email</field.Label>
             <field.Content>
-              <field.Input type="email" placeholder="john@doe.com" />
+              <field.Input type="email" placeholder="vous@exemple.com" />
               <field.Message />
             </field.Content>
           </field.Field>
@@ -70,13 +70,14 @@ export const SignInPasswordForm = (props: {
         {(field) => (
           <field.Field className="flex-1">
             <div className="flex items-center justify-between">
-              <field.Label>Password</field.Label>
+              <field.Label>Mot de passe</field.Label>
               <Link
                 href="/auth/forget-password"
-                className="text-muted-foreground hover:text-foreground text-xs transition-colors"
+                className="text-xs font-medium transition-opacity hover:opacity-70"
+                style={{ color: "#C4621D" }}
                 tabIndex={-1}
               >
-                Forgot password ?
+                Mot de passe oublié ?
               </Link>
             </div>
             <field.Content>
@@ -87,8 +88,14 @@ export const SignInPasswordForm = (props: {
         )}
       </form.AppField>
 
-      <form.SubmitButton className="ring-offset-card w-full ring-offset-2">
-        Sign in
+      <form.SubmitButton
+        className="w-full cursor-pointer rounded-xl text-sm font-semibold text-white"
+        style={{
+          backgroundColor: "#C4621D",
+          boxShadow: "0 1px 4px rgba(196,98,29,0.3)",
+        }}
+      >
+        Se connecter
       </form.SubmitButton>
     </Form>
   );

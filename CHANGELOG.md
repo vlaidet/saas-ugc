@@ -1,6 +1,65 @@
 # Changelog
 
+## 2026-04-03
+
+REFACTOR: Redesign all auth pages (signin, signup, forget-password, verify, confirm-delete, goodbye, error) with warm palette and French text
+REFACTOR: Replace auth layout grid background with warm cream background and dot pattern
+REFACTOR: Style auth buttons, provider buttons, and OTP forms with warm accent color (#C4621D)
+
+## 2026-04-02
+
+REFACTOR: Remove organization pages and redirect all post-login flows to /pipeline
+FEATURE: Add Settings page (/pipeline/settings) with warm palette design — profile, email, security, danger zone sections
+FEATURE: Add Billing page (/pipeline/billing) with premium dark banner, plan grid, and Stripe portal integration
+REFACTOR: Simplify proxy.ts by removing org slug validation logic
+REFACTOR: Add Settings and Billing links to pipeline sidebar navigation
+
+## 2026-03-26
+
+FEATURE: Add collapsible sidebar with Pipeline and Messages navigation links, user account dropdown with logout
+FEATURE: Add Messages page placeholder with warm-themed empty state
+REFACTOR: Wrap pipeline routes in SidebarProvider layout with warm palette CSS variables
+REFACTOR: Replace h-screen with h-full on pipeline-page to work within sidebar layout
+REFACTOR: Replace sidebar border with box-shadow for depth effect, fix icon centering when collapsed, redesign user dropdown with warm palette
+FIX: Replace blue tooltip background with warm dark brown (#3D2314) to match project palette
+FEATURE: Add "Templates de Messages" module with create/edit/duplicate/delete, variable system ({{nom_marque}}, {{produit}}, etc.), response rate tracking, performance badges, and "Use template" side panel with copy-to-clipboard
+FEATURE: Add template stats dashboard (total templates, total uses, average response rate, best performer)
+FEATURE: Add template filters by channel, niche, search, and sort by response rate/usage/date
+FEATURE: Include 3 pre-built mock templates (DM Instagram, Email Cold Outreach, Relance J+7) with realistic stats
+
+## 2026-03-20
+
+FIX: Auto-focus notes textarea when opening brand edit dialog, position cursor at end, allow vertical resize and auto-resize on content
+
+## 2026-03-15
+
+FEATURE: Replace date inputs with inline mini-calendar picker for custom date range selection
+FEATURE: Add contact count badge in list-view and brand-card (warm pill, darker when > 0)
+FIX: Resolve ESLint no-unnecessary-condition error in DateRangeFilter handleDay logic
+FEATURE: Add date range filter with presets (today, this week, last week, this month, last month, this year, last year, custom date range)
+FEATURE: Add ChannelBadge component with gradient backgrounds for each channel (Instagram, LinkedIn, Email, Formulaire)
+FEATURE: Update CommandPalette to accept controlled props (open, onOpenChange, query, onQueryChange, selectedIndex, onSelectedIndexChange)
+REFACTOR: Move Cmd+K listener from CommandPalette to pipeline-page.tsx for centralized keyboard handling
+REFACTOR: Update search input in navbar to be readOnly with onClick handler to open CommandPalette
+REFACTOR: Update list-view and brand-card to display ChannelBadge instead of plain text canal
+REFACTOR: Add cursor-pointer to SelectTrigger in list-view for better UX
+REFACTOR: Update PipelineCounters to receive filtered brands (pipeline.brands) instead of all brands
+
 ## 2026-03-14
+
+FEATURE: Add Cmd+K / Ctrl+K command palette to search brands and contact history
+FIX: Remove blue tooltip arrow by rendering InlineTooltip without Radix Arrow element
+FIX: Remove white background bar behind pipeline filters (now inherits warm page bg)
+FIX: Add cursor-pointer to all action buttons, view toggle, and add brand button
+FIX: Click on kanban card or list row now opens edit dialog (stopPropagation on action buttons)
+FEATURE: Drag cursor shows grabbing hand on kanban cards (cursor-pointer by default, grabbing when active)
+
+REFACTOR: Move search bar into the sticky navbar header in pipeline-page.tsx
+REFACTOR: Simplify pipeline-filters.tsx to show only niche/status/channel selects (search removed)
+REFACTOR: Premium warm-themed modals for brand-form-dialog and contact-history-dialog (white bg, #EDE0D0 border, #C4621D accents)
+REFACTOR: Warm SelectContent/SelectItem overrides for all pipeline dropdowns (replaces dark default theme)
+FEATURE: Entrance animations on kanban cards (staggered fade-in + slide-from-bottom with animationDelay)
+FEATURE: View switch animation (animate-in fade-in-0 on key change between Kanban/Liste)
 
 REFACTOR: Complete redesign of Pipeline UI with warm premium color palette (#FAF6F1, #EDE0D0, #3D2314, #C4621D)
 REFACTOR: Redesign pipeline-page.tsx with full-bleed background layout and custom header section

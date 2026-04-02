@@ -27,6 +27,13 @@ type PipelineAction =
     }
   | { type: "DELETE_BRAND"; id: string }
   | { type: "CHANGE_STATUS"; id: string; status: BrandStatus }
+  | {
+      type: "REORDER_BRAND";
+      dragId: string;
+      targetId: string;
+      position: "before" | "after";
+      status: BrandStatus;
+    }
   | { type: "ADD_CONTACT"; brandId: string; contact: Omit<ContactEntry, "id"> }
   | { type: "SET_VIEW"; view: PipelineView }
   | { type: "SET_FILTER"; key: keyof PipelineFilters; value: string }
@@ -41,6 +48,9 @@ const initialState: PipelineState = {
     status: "all",
     channel: "all",
     search: "",
+    datePreset: "all",
+    dateFrom: "",
+    dateTo: "",
   },
   draggedBrandId: null,
 };
@@ -94,6 +104,27 @@ function pipelineReducer(
         ),
       };
 
+    case "REORDER_BRAND": {
+      const dragged = state.brands.find((b) => b.id === action.dragId);
+      if (!dragged) return state;
+      const withoutDragged = state.brands.filter((b) => b.id !== action.dragId);
+      const targetIdx = withoutDragged.findIndex(
+        (b) => b.id === action.targetId,
+      );
+      if (targetIdx === -1) return state;
+      const insertIdx =
+        action.position === "before" ? targetIdx : targetIdx + 1;
+      const updated = { ...dragged, status: action.status };
+      return {
+        ...state,
+        brands: [
+          ...withoutDragged.slice(0, insertIdx),
+          updated,
+          ...withoutDragged.slice(insertIdx),
+        ],
+      };
+    }
+
     case "ADD_CONTACT":
       return {
         ...state,
@@ -130,6 +161,84 @@ function pipelineReducer(
 
     default:
       return state;
+  }
+}
+
+function getDateRange(
+  preset: string,
+  dateFrom: string,
+  dateTo: string,
+): { from: Date | null; to: Date | null } {
+  const now = new Date();
+
+  switch (preset) {
+    case "today": {
+      const start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const end = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+        23,
+        59,
+        59,
+      );
+      return { from: start, to: end };
+    }
+    case "this_week": {
+      const dow = now.getDay();
+      const start = new Date(now);
+      start.setDate(now.getDate() - (dow === 0 ? 6 : dow - 1));
+      start.setHours(0, 0, 0, 0);
+      const end = new Date(now);
+      end.setHours(23, 59, 59, 999);
+      return { from: start, to: end };
+    }
+    case "last_week": {
+      const dow = now.getDay();
+      const thisMonday = new Date(now);
+      thisMonday.setDate(now.getDate() - (dow === 0 ? 6 : dow - 1));
+      const lastMonday = new Date(thisMonday);
+      lastMonday.setDate(thisMonday.getDate() - 7);
+      lastMonday.setHours(0, 0, 0, 0);
+      const lastSunday = new Date(thisMonday);
+      lastSunday.setDate(thisMonday.getDate() - 1);
+      lastSunday.setHours(23, 59, 59, 999);
+      return { from: lastMonday, to: lastSunday };
+    }
+    case "this_month": {
+      const start = new Date(now.getFullYear(), now.getMonth(), 1);
+      const end = new Date(
+        now.getFullYear(),
+        now.getMonth() + 1,
+        0,
+        23,
+        59,
+        59,
+      );
+      return { from: start, to: end };
+    }
+    case "last_month": {
+      const start = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+      const end = new Date(now.getFullYear(), now.getMonth(), 0, 23, 59, 59);
+      return { from: start, to: end };
+    }
+    case "this_year": {
+      const start = new Date(now.getFullYear(), 0, 1);
+      const end = new Date(now.getFullYear(), 11, 31, 23, 59, 59);
+      return { from: start, to: end };
+    }
+    case "last_year": {
+      const start = new Date(now.getFullYear() - 1, 0, 1);
+      const end = new Date(now.getFullYear() - 1, 11, 31, 23, 59, 59);
+      return { from: start, to: end };
+    }
+    case "custom": {
+      const from = dateFrom ? new Date(dateFrom) : null;
+      const to = dateTo ? new Date(`${dateTo}T23:59:59`) : null;
+      return { from, to };
+    }
+    default:
+      return { from: null, to: null };
   }
 }
 
@@ -170,6 +279,16 @@ export function usePipeline() {
     if (state.filters.search) {
       const search = state.filters.search.toLowerCase();
       if (!brand.name.toLowerCase().includes(search)) return false;
+    }
+    if (state.filters.datePreset !== "all") {
+      const { from, to } = getDateRange(
+        state.filters.datePreset,
+        state.filters.dateFrom,
+        state.filters.dateTo,
+      );
+      const createdAt = new Date(brand.createdAt);
+      if (from && createdAt < from) return false;
+      if (to && createdAt > to) return false;
     }
     return true;
   });
@@ -215,6 +334,14 @@ export function usePipeline() {
 
     changeStatus: (id: string, status: BrandStatus) =>
       dispatch({ type: "CHANGE_STATUS", id, status }),
+
+    reorderBrand: (
+      dragId: string,
+      targetId: string,
+      position: "before" | "after",
+      status: BrandStatus,
+    ) =>
+      dispatch({ type: "REORDER_BRAND", dragId, targetId, position, status }),
 
     addContact: (brandId: string, contact: Omit<ContactEntry, "id">) =>
       dispatch({ type: "ADD_CONTACT", brandId, contact }),

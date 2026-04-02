@@ -34,7 +34,7 @@ export const OrgPlanDialog = () => {
               features={getPlanFeatures(card)}
               action={
                 <Button asChild>
-                  <Link href="/orgs/default/settings/billing">Upgrade</Link>
+                  <Link href="/pipeline/billing">Upgrade</Link>
                 </Button>
               }
             />

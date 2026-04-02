@@ -1,11 +1,3 @@
-import { Typography } from "@/components/nowts/typography";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-} from "@/components/ui/card";
 import { SocialProviders } from "@/lib/auth";
 import { getUser } from "@/lib/auth/auth-user";
 import { SiteConfig } from "@/site-config";
@@ -15,9 +7,8 @@ import { Suspense } from "react";
 import { SignInProviders } from "./sign-in-providers";
 
 export const metadata: Metadata = {
-  title: `Sign In | ${SiteConfig.title}`,
-  description:
-    "Sign in to your account to access testimonials and manage your projects.",
+  title: `Connexion | ${SiteConfig.title}`,
+  description: "Connectez-vous à votre compte pour accéder à votre pipeline.",
 };
 
 export default function Page() {
@@ -32,31 +23,30 @@ async function AuthSignInPage() {
   const user = await getUser();
 
   if (user) {
-    redirect("/account");
+    redirect("/pipeline");
   }
 
   const providers = Object.keys(SocialProviders ?? {});
 
   return (
-    <Card className="mx-auto h-auto w-full max-w-md lg:max-w-lg lg:p-6">
-      <CardHeader className="flex flex-col items-center justify-center gap-2">
-        <div className="mx-auto mt-4 flex flex-row items-center gap-2">
-          <Avatar className="size-8 rounded-md">
-            <AvatarImage src={SiteConfig.appIcon} alt="app logo" />
-            <AvatarFallback>
-              {SiteConfig.title.substring(0, 1).toUpperCase()}
-            </AvatarFallback>
-          </Avatar>
-          <Typography variant="large">{SiteConfig.title}</Typography>
-        </div>
+    <div
+      className="rounded-2xl bg-white p-8"
+      style={{
+        border: "1px solid #EDE0D0",
+        boxShadow:
+          "0 4px 24px rgba(61,35,20,0.08), 0 1px 4px rgba(61,35,20,0.04)",
+      }}
+    >
+      <div className="mb-6 text-center">
+        <h1 className="text-xl font-bold" style={{ color: "#3D2314" }}>
+          Bon retour parmi nous
+        </h1>
+        <p className="mt-1.5 text-sm" style={{ color: "#A89880" }}>
+          Connectez-vous pour accéder à votre pipeline
+        </p>
+      </div>
 
-        <CardDescription className="text-center">
-          Please sign in to your account to continue.
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="mt-4">
-        <SignInProviders providers={providers} />
-      </CardContent>
-    </Card>
+      <SignInProviders providers={providers} />
+    </div>
   );
 }

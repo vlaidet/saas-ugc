@@ -1,13 +1,5 @@
 "use client";
 
-import { Typography } from "@/components/nowts/typography";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
 import {
   InputOTP,
   InputOTPGroup,
@@ -33,7 +25,9 @@ const EmailFormSchema = z.object({
 });
 
 const PasswordFormSchema = z.object({
-  password: z.string().min(8, "Password must be at least 8 characters"),
+  password: z
+    .string()
+    .min(8, "Le mot de passe doit contenir au moins 8 caractères"),
 });
 
 export function ForgetPasswordPage() {
@@ -95,7 +89,7 @@ export function ForgetPasswordPage() {
       toast.error(error.message);
     },
     onSuccess: () => {
-      toast.success("Password reset successfully");
+      toast.success("Mot de passe réinitialisé");
       window.location.href = "/auth/signin";
     },
   });
@@ -118,25 +112,41 @@ export function ForgetPasswordPage() {
     }
   };
 
-  return (
-    <Card className="mx-auto w-full max-w-md lg:max-w-lg lg:p-6">
-      <CardHeader>
-        <div className="flex justify-center">
-          <Avatar className="size-16">
-            <AvatarFallback>
-              <Lock />
-            </AvatarFallback>
-          </Avatar>
-        </div>
-        <CardHeader className="text-center">Forget Password</CardHeader>
-        <CardDescription className="text-center">
-          {step === "email" && "Enter your email to reset your password"}
-          {step === "otp" && "Enter the code sent to your email"}
-          {step === "password" && "Enter your new password"}
-        </CardDescription>
-      </CardHeader>
+  const stepDescriptions: Record<Step, string> = {
+    email: "Entrez votre email pour réinitialiser votre mot de passe",
+    otp: "Entrez le code envoyé à votre email",
+    password: "Choisissez votre nouveau mot de passe",
+  };
 
-      <CardFooter className="border-t pt-6">
+  return (
+    <div
+      className="rounded-2xl bg-white p-8"
+      style={{
+        border: "1px solid #EDE0D0",
+        boxShadow:
+          "0 4px 24px rgba(61,35,20,0.08), 0 1px 4px rgba(61,35,20,0.04)",
+      }}
+    >
+      {/* Header */}
+      <div className="mb-6 text-center">
+        <div className="mb-4 flex justify-center">
+          <div
+            className="flex h-14 w-14 items-center justify-center rounded-2xl"
+            style={{ backgroundColor: "#FEF3EB" }}
+          >
+            <Lock className="h-7 w-7" style={{ color: "#C4621D" }} />
+          </div>
+        </div>
+        <h1 className="text-xl font-bold" style={{ color: "#3D2314" }}>
+          Mot de passe oublié
+        </h1>
+        <p className="mt-1.5 text-sm" style={{ color: "#A89880" }}>
+          {stepDescriptions[step]}
+        </p>
+      </div>
+
+      {/* Steps */}
+      <div className="border-t pt-6" style={{ borderColor: "#EDE0D0" }}>
         <motion.div animate={{ height: bounds.height }} className="w-full">
           <div ref={ref}>
             <AnimatePresence mode="wait" custom={direction}>
@@ -203,8 +213,8 @@ export function ForgetPasswordPage() {
             </AnimatePresence>
           </div>
         </motion.div>
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   );
 }
 
@@ -240,15 +250,23 @@ const EmailStep = (props: {
           <field.Field>
             <field.Label>Email</field.Label>
             <field.Content>
-              <field.Input type="email" placeholder="your@email.com" />
+              <field.Input type="email" placeholder="vous@exemple.com" />
               <field.Message />
             </field.Content>
           </field.Field>
         )}
       </form.AppField>
 
-      <LoadingButton loading={props.isPending} type="submit" className="w-full">
-        Send Reset Code
+      <LoadingButton
+        loading={props.isPending}
+        type="submit"
+        className="w-full cursor-pointer rounded-xl text-sm font-semibold text-white"
+        style={{
+          backgroundColor: "#C4621D",
+          boxShadow: "0 1px 4px rgba(196,98,29,0.3)",
+        }}
+      >
+        Envoyer le code
       </LoadingButton>
     </Form>
   );
@@ -265,18 +283,20 @@ const OtpStep = (props: {
 }) => {
   return (
     <div className="flex w-full flex-col items-start gap-4">
-      <Typography variant="muted">
-        A one-time password has been sent to{" "}
-        <span className="font-bold">{props.email}</span>{" "}
-        <Typography
-          variant="link"
-          as="button"
+      <p className="text-sm" style={{ color: "#6B4226" }}>
+        Un code a été envoyé à{" "}
+        <span className="font-semibold" style={{ color: "#3D2314" }}>
+          {props.email}
+        </span>{" "}
+        <button
+          type="button"
           onClick={props.onBack}
-          className={cn("underline")}
+          className="cursor-pointer font-medium underline underline-offset-2 transition-opacity hover:opacity-70"
+          style={{ color: "#C4621D" }}
         >
-          Edit email
-        </Typography>
-      </Typography>
+          Modifier
+        </button>
+      </p>
       <div className="flex items-center gap-2">
         <InputOTP
           maxLength={6}
@@ -323,17 +343,25 @@ const PasswordStep = (props: {
       <form.AppField name="password">
         {(field) => (
           <field.Field>
-            <field.Label>New Password</field.Label>
+            <field.Label>Nouveau mot de passe</field.Label>
             <field.Content>
-              <field.Input type="password" placeholder="••••••••" />
+              <field.Input type="password" placeholder="Min. 8 caractères" />
               <field.Message />
             </field.Content>
           </field.Field>
         )}
       </form.AppField>
 
-      <LoadingButton loading={props.isPending} type="submit" className="w-full">
-        Reset Password
+      <LoadingButton
+        loading={props.isPending}
+        type="submit"
+        className="w-full cursor-pointer rounded-xl text-sm font-semibold text-white"
+        style={{
+          backgroundColor: "#C4621D",
+          boxShadow: "0 1px 4px rgba(196,98,29,0.3)",
+        }}
+      >
+        Réinitialiser le mot de passe
       </LoadingButton>
     </Form>
   );
@@ -361,20 +389,18 @@ const ResendOtpButton = (props: {
   };
 
   return (
-    <Typography
-      variant="link"
-      as="button"
+    <button
+      type="button"
       onClick={handleResend}
       disabled={props.isPending || countdown > 0}
       className={cn(
-        "underline",
-        {
-          "animate-pulse": props.isPending,
-        },
-        "disabled:opacity-50",
+        "cursor-pointer text-xs font-medium underline underline-offset-2 transition-opacity hover:opacity-70",
+        "disabled:cursor-not-allowed disabled:opacity-50",
+        { "animate-pulse": props.isPending },
       )}
+      style={{ color: "#C4621D" }}
     >
-      Resend {countdown > 0 ? `(${countdown})` : ""}
-    </Typography>
+      Renvoyer {countdown > 0 ? `(${countdown}s)` : ""}
+    </button>
   );
 };

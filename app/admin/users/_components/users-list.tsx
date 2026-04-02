@@ -133,7 +133,7 @@ export function UsersList({
     },
     onSuccess: () => {
       toast.success("Now impersonating user");
-      window.location.href = "/orgs";
+      window.location.href = "/pipeline";
     },
   });
 

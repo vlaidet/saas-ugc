@@ -1,8 +1,5 @@
 "use client";
 
-import { Divider } from "@/components/nowts/divider";
-import { Typography } from "@/components/nowts/typography";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ProviderButton } from "./provider-button";
@@ -21,34 +18,38 @@ export const SignInProviders = ({
   callbackUrl ??= callbackUrlParams as string;
 
   return (
-    <div className="flex flex-col gap-4 lg:gap-6">
+    <div className="flex flex-col gap-5">
       <SignInCredentialsAndEmailOTP callbackUrl={callbackUrl} />
-      {providers.length > 0 && <Divider>or</Divider>}
 
-      <div
-        className={cn("grid gap-2 lg:gap-4", {
-          "grid-cols-1": providers.length === 1,
-          "grid-cols-1 lg:grid-cols-2": providers.length > 1,
-        })}
-      >
-        {providers.includes("github") && (
-          <ProviderButton providerId="github" callbackUrl={callbackUrl} />
-        )}
+      {providers.length > 0 && (
+        <div className="flex items-center gap-3">
+          <div className="h-px flex-1" style={{ backgroundColor: "#EDE0D0" }} />
+          <span className="text-xs font-medium" style={{ color: "#A89880" }}>
+            ou continuer avec
+          </span>
+          <div className="h-px flex-1" style={{ backgroundColor: "#EDE0D0" }} />
+        </div>
+      )}
+
+      <div className="flex flex-col gap-2.5">
         {providers.includes("google") && (
           <ProviderButton providerId="google" callbackUrl={callbackUrl} />
         )}
+        {providers.includes("github") && (
+          <ProviderButton providerId="github" callbackUrl={callbackUrl} />
+        )}
       </div>
 
-      <Typography variant="muted" className="text-xs">
-        You don't have an account?{" "}
-        <Typography
-          variant="link"
-          as={Link}
+      <p className="text-center text-xs" style={{ color: "#A89880" }}>
+        Pas encore de compte ?{" "}
+        <Link
           href={`/auth/signup?callbackUrl=${callbackUrl}`}
+          className="font-medium underline underline-offset-2 transition-opacity hover:opacity-70"
+          style={{ color: "#C4621D" }}
         >
-          Sign up
-        </Typography>
-      </Typography>
+          Créer un compte
+        </Link>
+      </p>
     </div>
   );
 };

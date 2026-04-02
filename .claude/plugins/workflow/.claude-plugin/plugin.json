@@ -1,0 +1,11 @@
+{
+  "name": "workflow",
+  "version": "1.0.0",
+  "description": "Commandes et workflows essentiels pour le cycle de developpement : feature pipeline, review, deploiement",
+  "author": {
+    "name": "Valentin Laidet"
+  },
+  "skills": [
+    "skills/feat"
+  ]
+}

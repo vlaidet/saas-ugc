@@ -27,57 +27,92 @@ export const STATUSES: BrandStatus[] = [
   "Blacklist",
 ];
 
+export const NICHE_COLORS: Record<BrandNiche, string> = {
+  Skincare: "#C17B8A",
+  Food: "#C4813A",
+  Électroménager: "#5F8FBA",
+  Puériculture: "#8F6AB0",
+  Voyage: "#3D9E8E",
+  Mode: "#B05E82",
+  Maison: "#A88B28",
+  Autre: "#7A7A7A",
+};
+
+export const STATUS_CONFIG: Record<
+  BrandStatus,
+  { dot: string; bg: string; text: string; border: string }
+> = {
+  "À contacter": {
+    dot: "#9CA3AF",
+    bg: "#F5F0EB",
+    text: "#6B4226",
+    border: "#C9BEB2",
+  },
+  Contactée: {
+    dot: "#3B82F6",
+    bg: "#EFF6FF",
+    text: "#1D4ED8",
+    border: "#60A5FA",
+  },
+  "En discussion": {
+    dot: "#D97706",
+    bg: "#FFFBEB",
+    text: "#92400E",
+    border: "#FCD34D",
+  },
+  "Deal signé": {
+    dot: "#059669",
+    bg: "#ECFDF5",
+    text: "#065F46",
+    border: "#34D399",
+  },
+  Refus: {
+    dot: "#DC2626",
+    bg: "#FEF2F2",
+    text: "#991B1B",
+    border: "#FCA5A5",
+  },
+  Blacklist: {
+    dot: "#374151",
+    bg: "#F3F4F6",
+    text: "#374151",
+    border: "#9CA3AF",
+  },
+};
+
 export const STATUS_COLORS: Record<
   BrandStatus,
   { bg: string; text: string; border: string; topBorder: string }
-> = {
-  "À contacter": {
-    bg: "#F3F4F6",
-    text: "#374151",
-    border: "#D1D5DB",
-    topBorder: "#9CA3AF",
-  },
-  Contactée: {
-    bg: "#DBEAFE",
-    text: "#1D4ED8",
-    border: "#BFDBFE",
-    topBorder: "#3B82F6",
-  },
-  "En discussion": {
-    bg: "#FEF3C7",
-    text: "#D97706",
-    border: "#FDE68A",
-    topBorder: "#F59E0B",
-  },
-  "Deal signé": {
-    bg: "#D1FAE5",
-    text: "#065F46",
-    border: "#A7F3D0",
-    topBorder: "#10B981",
-  },
-  Refus: {
-    bg: "#FEE2E2",
-    text: "#991B1B",
-    border: "#FECACA",
-    topBorder: "#EF4444",
-  },
-  Blacklist: {
-    bg: "#F3F4F6",
-    text: "#111827",
-    border: "#9CA3AF",
-    topBorder: "#374151",
-  },
-};
-
-export const NICHE_COLORS: Record<BrandNiche, string> = {
-  Skincare: "#EC4899",
-  Food: "#F97316",
-  Électroménager: "#3B82F6",
-  Puériculture: "#A855F7",
-  Voyage: "#14B8A6",
-  Mode: "#F43F5E",
-  Maison: "#F59E0B",
-  Autre: "#6B7280",
-};
+> = Object.fromEntries(
+  Object.entries(STATUS_CONFIG).map(([k, v]) => [
+    k,
+    { bg: v.bg, text: v.text, border: v.dot, topBorder: v.border },
+  ]),
+) as Record<
+  BrandStatus,
+  { bg: string; text: string; border: string; topBorder: string }
+>;
 
 export const FOLLOWUP_DAYS = 7;
+
+export const CHANNEL_CONFIG: Record<
+  ContactChannel,
+  { gradient: string; textColor: string }
+> = {
+  Instagram: {
+    gradient: "linear-gradient(135deg, #833AB4 0%, #C13584 50%, #E1306C 100%)",
+    textColor: "white",
+  },
+  LinkedIn: {
+    gradient: "linear-gradient(135deg, #0077B5 0%, #00A0DC 100%)",
+    textColor: "white",
+  },
+  Email: {
+    gradient: "linear-gradient(135deg, #C4621D 0%, #E8843A 100%)",
+    textColor: "white",
+  },
+  Formulaire: {
+    gradient: "linear-gradient(135deg, #059669 0%, #10B981 100%)",
+    textColor: "white",
+  },
+};

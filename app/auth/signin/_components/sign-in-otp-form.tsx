@@ -1,6 +1,5 @@
 "use client";
 
-import { Typography } from "@/components/nowts/typography";
 import {
   InputOTP,
   InputOTPGroup,
@@ -54,7 +53,7 @@ export const SignInWithEmailOTP = (props: {
   const verifyOtpMutation = useMutation({
     mutationFn: async (otp: string) => {
       if (!otpEmail) {
-        throw new Error("Email is required");
+        throw new Error("Email requis");
       }
 
       return unwrapSafePromise(
@@ -68,8 +67,8 @@ export const SignInWithEmailOTP = (props: {
       toast.error(error.message);
     },
     onSuccess: () => {
-      toast.success("Signed in successfully");
-      const cb = getCallbackUrl(props.callbackUrl ?? "/orgs");
+      toast.success("Connexion réussie");
+      const cb = getCallbackUrl(props.callbackUrl ?? "/pipeline");
       window.location.href = cb;
     },
   });
@@ -157,7 +156,7 @@ const OtpEmailForm = (props: {
               <field.Input
                 type="email"
                 data-testid="otp-email-input"
-                placeholder="john@doe.com"
+                placeholder="vous@exemple.com"
               />
               <field.Message />
             </field.Content>
@@ -168,9 +167,13 @@ const OtpEmailForm = (props: {
       <LoadingButton
         loading={props.isPending}
         type="submit"
-        className="ring-offset-card w-full ring-offset-2"
+        className="w-full cursor-pointer rounded-xl text-sm font-semibold text-white"
+        style={{
+          backgroundColor: "#C4621D",
+          boxShadow: "0 1px 4px rgba(196,98,29,0.3)",
+        }}
       >
-        Sign in
+        Se connecter
       </LoadingButton>
     </Form>
   );
@@ -195,18 +198,20 @@ const OtpVerificationForm = (props: {
 
   return (
     <div className="flex w-full flex-col items-start gap-4">
-      <Typography variant="muted">
-        A one-time password has been sent to{" "}
-        <span className="font-bold">{props.email}</span>{" "}
-        <Typography
-          variant="link"
-          as="button"
+      <p className="text-sm" style={{ color: "#6B4226" }}>
+        Un code a été envoyé à{" "}
+        <span className="font-semibold" style={{ color: "#3D2314" }}>
+          {props.email}
+        </span>{" "}
+        <button
+          type="button"
           onClick={props.onBack}
-          className={cn("underline")}
+          className="cursor-pointer font-medium underline underline-offset-2 transition-opacity hover:opacity-70"
+          style={{ color: "#C4621D" }}
         >
-          Edit email
-        </Typography>
-      </Typography>
+          Modifier
+        </button>
+      </p>
       <div className="flex items-center gap-2">
         <InputOTP
           maxLength={6}
@@ -256,20 +261,18 @@ const ResendOtpButton = (props: {
   };
 
   return (
-    <Typography
-      variant="link"
-      as="button"
+    <button
+      type="button"
       onClick={handleResend}
       disabled={props.isPending || countdown > 0}
       className={cn(
-        "underline",
-        {
-          "animate-pulse": props.isPending,
-        },
-        "disabled:opacity-50",
+        "cursor-pointer text-xs font-medium underline underline-offset-2 transition-opacity hover:opacity-70",
+        "disabled:cursor-not-allowed disabled:opacity-50",
+        { "animate-pulse": props.isPending },
       )}
+      style={{ color: "#C4621D" }}
     >
-      Resend {countdown > 0 ? `(${countdown})` : ""}
-    </Typography>
+      Renvoyer {countdown > 0 ? `(${countdown}s)` : ""}
+    </button>
   );
 };
