@@ -217,6 +217,9 @@ export function TemplatesPage() {
         onOpenChange={setFormOpen}
         onSubmit={editingTemplate ? handleEdit : handleCreate}
         defaultValues={editingTemplate}
+        customVariables={store.customVariables}
+        onAddCustomVariable={store.addCustomVariable}
+        onDeleteCustomVariable={store.deleteCustomVariable}
       />
 
       {/* Panel latéral "Utiliser ce template" */}
@@ -225,6 +228,7 @@ export function TemplatesPage() {
         open={usePanelOpen}
         onOpenChange={setUsePanelOpen}
         onUsed={handleUsed}
+        customVariables={store.customVariables}
       />
     </div>
   );

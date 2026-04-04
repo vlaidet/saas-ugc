@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { Plus, X } from "lucide-react";
+import { toast } from "sonner";
 import {
   Dialog,
   DialogContent,
@@ -9,8 +11,8 @@ import {
 } from "@/components/ui/dialog";
 import { CHANNELS, NICHES } from "@/features/pipeline/constants";
 import type { BrandNiche, ContactChannel } from "@/features/pipeline/types";
-import type { MessageTemplate } from "../types";
-import { VARIABLE_CONFIG } from "../constants";
+import type { CustomVariable, MessageTemplate } from "../types";
+import { VARIABLE_CONFIG, formatVariableKey } from "../constants";
 import { VariableHighlight } from "./variable-highlight";
 
 type TemplateFormData = {
@@ -25,9 +27,12 @@ type TemplateFormDialogProps = {
   onOpenChange: (open: boolean) => void;
   onSubmit: (data: TemplateFormData) => void;
   defaultValues: MessageTemplate | null;
+  customVariables: CustomVariable[];
+  onAddCustomVariable: (variable: CustomVariable) => void;
+  onDeleteCustomVariable: (key: string) => void;
 };
 
-const VARIABLE_CHIPS = Object.entries(VARIABLE_CONFIG).map(([key, cfg]) => ({
+const DEFAULT_CHIPS = Object.entries(VARIABLE_CONFIG).map(([key, cfg]) => ({
   key,
   label: cfg.label,
   tag: `{{${key}}}`,
@@ -38,17 +43,22 @@ export function TemplateFormDialog({
   onOpenChange,
   onSubmit,
   defaultValues,
+  customVariables,
+  onAddCustomVariable,
+  onDeleteCustomVariable,
 }: TemplateFormDialogProps) {
   const isEditing = defaultValues !== null;
 
-  // Derive form state from props (React recommended pattern)
-  // On détecte quand le dialog s'ouvre et on reset le formulaire
   const [formKey, setFormKey] = useState<string | null>(null);
   const [title, setTitle] = useState("");
   const [channel, setChannel] = useState<ContactChannel>("Instagram");
   const [niche, setNiche] = useState<BrandNiche>("Skincare");
   const [content, setContent] = useState("");
   const [showPreview, setShowPreview] = useState(false);
+
+  // Formulaire inline pour ajouter une variable
+  const [showAddVariable, setShowAddVariable] = useState(false);
+  const [newVarLabel, setNewVarLabel] = useState("");
 
   const currentKey = open ? (defaultValues?.id ?? "new") : null;
   if (currentKey !== formKey) {
@@ -59,6 +69,8 @@ export function TemplateFormDialog({
       setNiche(defaultValues?.niche ?? "Skincare");
       setContent(defaultValues?.content ?? "");
       setShowPreview(false);
+      setShowAddVariable(false);
+      setNewVarLabel("");
     }
   }
 
@@ -67,7 +79,6 @@ export function TemplateFormDialog({
     onSubmit({ title: title.trim(), channel, niche, content: content.trim() });
   };
 
-  /** Insère une variable à la position du curseur dans le textarea */
   const insertVariable = (tag: string) => {
     const textarea = document.getElementById(
       "template-content",
@@ -82,14 +93,52 @@ export function TemplateFormDialog({
       content.substring(0, start) + tag + content.substring(end);
     setContent(newContent);
 
-    // Repositionner le curseur après la variable
     requestAnimationFrame(() => {
       textarea.focus();
       textarea.setSelectionRange(start + tag.length, start + tag.length);
     });
   };
 
+  const handleAddCustomVariable = () => {
+    const label = newVarLabel.trim();
+    if (!label) return;
+
+    const key = formatVariableKey(label);
+    if (!key) return;
+
+    // Vérifier les doublons avec les variables par défaut
+    if (key in VARIABLE_CONFIG) {
+      toast.error("Cette variable existe déjà par défaut");
+      return;
+    }
+
+    // Vérifier les doublons avec les variables custom existantes
+    if (customVariables.some((v) => v.key === key)) {
+      toast.error("Cette variable existe déjà");
+      return;
+    }
+
+    const variable: CustomVariable = {
+      key,
+      label,
+      placeholder: `Ex: ${label}`,
+    };
+
+    onAddCustomVariable(variable);
+    insertVariable(`{{${key}}}`);
+    setNewVarLabel("");
+    setShowAddVariable(false);
+    toast.success("Variable ajoutée");
+  };
+
+  const customChips = customVariables.map((v) => ({
+    key: v.key,
+    label: v.label,
+    tag: `{{${v.key}}}`,
+  }));
+
   const isValid = title.trim() !== "" && content.trim() !== "";
+  const generatedKey = formatVariableKey(newVarLabel);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -197,8 +246,10 @@ export function TemplateFormDialog({
               >
                 Insérer une variable
               </label>
+
               <div className="flex flex-wrap gap-1.5">
-                {VARIABLE_CHIPS.map((v) => (
+                {/* Variables par défaut */}
+                {DEFAULT_CHIPS.map((v) => (
                   <button
                     key={v.key}
                     type="button"
@@ -214,7 +265,145 @@ export function TemplateFormDialog({
                     <span className="ml-1 opacity-60">{v.label}</span>
                   </button>
                 ))}
+
+                {/* Variables personnalisées */}
+                {customChips.map((v) => (
+                  <span key={v.key} className="group relative inline-flex">
+                    <button
+                      type="button"
+                      onClick={() => insertVariable(v.tag)}
+                      className="cursor-pointer rounded-lg border border-dashed px-2.5 py-1 text-xs font-medium transition-all hover:shadow-sm active:scale-95"
+                      style={{
+                        backgroundColor: "#FEF3ED",
+                        color: "#C4621D",
+                        borderColor: "#F5D5B8",
+                      }}
+                    >
+                      {v.tag}
+                      <span className="ml-1 opacity-60">{v.label}</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setContent((prev) =>
+                          prev.replace(
+                            new RegExp(`\\{\\{${v.key}\\}\\}`, "g"),
+                            "",
+                          ),
+                        );
+                        onDeleteCustomVariable(v.key);
+                      }}
+                      className="absolute -top-1.5 -right-1.5 hidden h-4 w-4 cursor-pointer items-center justify-center rounded-full transition-colors group-hover:flex"
+                      style={{
+                        backgroundColor: "#FEE2E2",
+                        color: "#DC2626",
+                      }}
+                      aria-label={`Supprimer la variable ${v.label}`}
+                    >
+                      <X className="h-2.5 w-2.5" />
+                    </button>
+                  </span>
+                ))}
+
+                {/* Bouton ajouter */}
+                {!showAddVariable && (
+                  <button
+                    type="button"
+                    onClick={() => setShowAddVariable(true)}
+                    className="flex cursor-pointer items-center gap-1 rounded-lg border border-dashed px-2.5 py-1 text-xs font-medium transition-all hover:shadow-sm"
+                    style={{
+                      borderColor: "#D4C4B0",
+                      color: "#A89880",
+                      backgroundColor: "transparent",
+                    }}
+                  >
+                    <Plus className="h-3 w-3" />
+                    Nouvelle variable
+                  </button>
+                )}
               </div>
+
+              {/* Formulaire inline d'ajout de variable */}
+              {showAddVariable && (
+                <div
+                  className="mt-2.5 flex flex-col gap-2 rounded-xl border p-3"
+                  style={{
+                    borderColor: "#EDE0D0",
+                    backgroundColor: "#FAF6F1",
+                  }}
+                >
+                  <div className="flex items-end gap-2">
+                    <div className="flex-1">
+                      <label
+                        className="mb-1 block text-[11px] font-semibold"
+                        style={{ color: "#6B4226" }}
+                      >
+                        Nom de la variable
+                      </label>
+                      <input
+                        type="text"
+                        value={newVarLabel}
+                        onChange={(e) => setNewVarLabel(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter") {
+                            e.preventDefault();
+                            handleAddCustomVariable();
+                          }
+                          if (e.key === "Escape") {
+                            setShowAddVariable(false);
+                            setNewVarLabel("");
+                          }
+                        }}
+                        placeholder="Ex: Budget maximum"
+                        autoFocus
+                        className="h-8 w-full rounded-lg border px-2.5 text-xs transition-all outline-none focus:shadow-sm"
+                        style={{
+                          borderColor: "#EDE0D0",
+                          color: "#3D2314",
+                          backgroundColor: "white",
+                        }}
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleAddCustomVariable}
+                      disabled={!newVarLabel.trim() || !generatedKey}
+                      className="h-8 cursor-pointer rounded-lg px-3 text-xs font-semibold text-white transition-all hover:opacity-90 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
+                      style={{ backgroundColor: "#C4621D" }}
+                    >
+                      Ajouter
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowAddVariable(false);
+                        setNewVarLabel("");
+                      }}
+                      className="flex h-8 w-8 flex-shrink-0 cursor-pointer items-center justify-center rounded-lg transition-colors hover:bg-[#EDE0D0]"
+                      style={{ color: "#A89880" }}
+                      aria-label="Annuler"
+                    >
+                      <X className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
+
+                  {newVarLabel.trim() && generatedKey && (
+                    <p className="text-[11px]" style={{ color: "#A89880" }}>
+                      Sera inséré comme{" "}
+                      <code
+                        className="rounded px-1 py-0.5 text-[10px] font-semibold"
+                        style={{
+                          backgroundColor: "#FEF3ED",
+                          color: "#C4621D",
+                        }}
+                      >
+                        {`{{${generatedKey}}}`}
+                      </code>
+                    </p>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Contenu */}

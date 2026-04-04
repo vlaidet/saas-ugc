@@ -11,10 +11,10 @@ import {
   SheetDescription,
 } from "@/components/ui/sheet";
 import { ChannelBadge } from "@/features/pipeline/components/channel-badge";
-import type { MessageTemplate } from "../types";
+import type { CustomVariable, MessageTemplate } from "../types";
 import {
-  VARIABLE_CONFIG,
   extractVariables,
+  getVariableConfig,
   renderTemplate,
 } from "../constants";
 import { VariableHighlight } from "./variable-highlight";
@@ -24,6 +24,7 @@ type TemplateUsePanelProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onUsed: (id: string) => void;
+  customVariables: CustomVariable[];
 };
 
 export function TemplateUsePanel({
@@ -31,11 +32,11 @@ export function TemplateUsePanel({
   open,
   onOpenChange,
   onUsed,
+  customVariables,
 }: TemplateUsePanelProps) {
   const [values, setValues] = useState<Record<string, string>>({});
   const [showPreview, setShowPreview] = useState(true);
 
-  // Reset les valeurs quand le template change
   const [prevTemplateId, setPrevTemplateId] = useState<string | null>(null);
   const currentTemplateId = template?.id ?? null;
   if (currentTemplateId !== prevTemplateId) {
@@ -52,10 +53,9 @@ export function TemplateUsePanel({
   const renderedContent = useMemo(() => {
     if (!template) return "";
 
-    // Valeurs par défaut : exemples si non rempli
     const mergedValues: Record<string, string> = {};
     for (const v of variables) {
-      mergedValues[v] = values[v] || "";
+      mergedValues[v] = values[v] ?? "";
     }
     return renderTemplate(template.content, mergedValues);
   }, [template, values, variables]);
@@ -125,7 +125,7 @@ export function TemplateUsePanel({
               </h4>
               <div className="flex flex-col gap-2.5">
                 {variables.map((variable) => {
-                  const config = VARIABLE_CONFIG[variable];
+                  const config = getVariableConfig(variable, customVariables);
                   return (
                     <div key={variable}>
                       <label

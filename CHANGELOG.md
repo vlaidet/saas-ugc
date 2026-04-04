@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-04-04
+
+FEATURE: Add custom variables system to message templates — create, insert, and delete user-defined variables with inline form, auto-generated keys, and smart fallback in use panel
+
 ## 2026-04-03
 
 REFACTOR: Redesign all auth pages (signin, signup, forget-password, verify, confirm-delete, goodbye, error) with warm palette and French text

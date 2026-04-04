@@ -1,4 +1,8 @@
-import type { MessageTemplate, TemplateVariable } from "./types";
+import type {
+  CustomVariable,
+  MessageTemplate,
+  TemplateVariable,
+} from "./types";
 
 export const VARIABLE_CONFIG: Record<
   TemplateVariable,
@@ -52,13 +56,48 @@ export function getResponseRate(
 }
 
 /** Extrait les noms de variables uniques d'un contenu */
-export function extractVariables(content: string): TemplateVariable[] {
+export function extractVariables(content: string): string[] {
   const matches = content.matchAll(VARIABLE_REGEX);
-  const unique = new Set<TemplateVariable>();
+  const unique = new Set<string>();
   for (const match of matches) {
-    unique.add(match[1] as TemplateVariable);
+    unique.add(match[1]);
   }
   return [...unique];
+}
+
+/** Génère une clé de variable à partir d'un label (ex: "Budget Maximum" → "budget_maximum") */
+export function formatVariableKey(label: string): string {
+  return label
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "")
+    .replace(/_+/g, "_");
+}
+
+/** Récupère la config d'une variable (défaut, custom, ou auto-générée) */
+export function getVariableConfig(
+  key: string,
+  customVariables: CustomVariable[],
+): { label: string; placeholder: string } {
+  if (key in VARIABLE_CONFIG) {
+    const config = VARIABLE_CONFIG[key as TemplateVariable];
+    return { label: config.label, placeholder: config.placeholder };
+  }
+
+  const custom = customVariables.find((v) => v.key === key);
+  if (custom) {
+    return { label: custom.label, placeholder: custom.placeholder };
+  }
+
+  const autoLabel = key
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+  return {
+    label: autoLabel,
+    placeholder: `Valeur de ${autoLabel.toLowerCase()}`,
+  };
 }
 
 /** Remplace les variables par des valeurs */
