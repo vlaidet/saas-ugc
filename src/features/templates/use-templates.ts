@@ -2,13 +2,20 @@
 
 import { useReducer, useEffect, useMemo, useCallback } from "react";
 import { nanoid } from "nanoid";
-import type { MessageTemplate, TemplateFilters, TemplateSortBy } from "./types";
+import type {
+  CustomVariable,
+  MessageTemplate,
+  TemplateFilters,
+  TemplateSortBy,
+} from "./types";
 import { MOCK_TEMPLATES, getResponseRate } from "./constants";
 
 const STORAGE_KEY = "message-templates";
+const CUSTOM_VARIABLES_KEY = "custom-variables";
 
 type TemplateState = {
   templates: MessageTemplate[];
+  customVariables: CustomVariable[];
   filters: TemplateFilters;
   sortBy: TemplateSortBy;
   initialized: boolean;
@@ -33,10 +40,13 @@ type TemplateAction =
   | { type: "INCREMENT_USED"; id: string }
   | { type: "INCREMENT_REPLIED"; id: string }
   | { type: "SET_FILTER"; key: keyof TemplateFilters; value: string }
-  | { type: "SET_SORT"; sortBy: TemplateSortBy };
+  | { type: "SET_SORT"; sortBy: TemplateSortBy }
+  | { type: "ADD_CUSTOM_VARIABLE"; variable: CustomVariable }
+  | { type: "DELETE_CUSTOM_VARIABLE"; key: string };
 
 const initialState: TemplateState = {
   templates: [],
+  customVariables: [],
   filters: { channel: "all", niche: "all", search: "" },
   sortBy: "responseRate",
   initialized: false,
@@ -134,9 +144,38 @@ function reducer(state: TemplateState, action: TemplateAction): TemplateState {
     case "SET_SORT":
       return { ...state, sortBy: action.sortBy };
 
+    case "ADD_CUSTOM_VARIABLE": {
+      const exists = state.customVariables.some(
+        (v) => v.key === action.variable.key,
+      );
+      if (exists) return state;
+      return {
+        ...state,
+        customVariables: [...state.customVariables, action.variable],
+      };
+    }
+
+    case "DELETE_CUSTOM_VARIABLE":
+      return {
+        ...state,
+        customVariables: state.customVariables.filter(
+          (v) => v.key !== action.key,
+        ),
+      };
+
     default:
       return state;
   }
+}
+
+function createMockTemplates(): MessageTemplate[] {
+  const now = new Date().toISOString();
+  return MOCK_TEMPLATES.map((t) => ({
+    ...t,
+    id: nanoid(),
+    createdAt: now,
+    updatedAt: now,
+  }));
 }
 
 export function useTemplates() {
@@ -145,34 +184,54 @@ export function useTemplates() {
   // Initialisation depuis localStorage ou mock data
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
+    let templates: MessageTemplate[];
+
     if (stored) {
       try {
         const parsed = JSON.parse(stored) as MessageTemplate[];
         if (parsed.length > 0) {
-          dispatch({ type: "INIT", templates: parsed });
-          return;
+          templates = parsed;
+        } else {
+          templates = createMockTemplates();
         }
       } catch {
-        // Fallback sur mock data
+        templates = createMockTemplates();
       }
+    } else {
+      templates = createMockTemplates();
     }
 
-    const now = new Date().toISOString();
-    const templates = MOCK_TEMPLATES.map((t) => ({
-      ...t,
-      id: nanoid(),
-      createdAt: now,
-      updatedAt: now,
-    }));
     dispatch({ type: "INIT", templates });
+
+    const storedVars = localStorage.getItem(CUSTOM_VARIABLES_KEY);
+    if (storedVars) {
+      try {
+        const parsed = JSON.parse(storedVars) as CustomVariable[];
+        for (const v of parsed) {
+          dispatch({ type: "ADD_CUSTOM_VARIABLE", variable: v });
+        }
+      } catch {
+        // Ignorer les données corrompues
+      }
+    }
   }, []);
 
-  // Persistance localStorage
+  // Persistance localStorage — templates
   useEffect(() => {
     if (state.initialized) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state.templates));
     }
   }, [state.templates, state.initialized]);
+
+  // Persistance localStorage — variables custom
+  useEffect(() => {
+    if (state.initialized) {
+      localStorage.setItem(
+        CUSTOM_VARIABLES_KEY,
+        JSON.stringify(state.customVariables),
+      );
+    }
+  }, [state.customVariables, state.initialized]);
 
   // Templates filtrés et triés
   const templates = useMemo(() => {
@@ -265,9 +324,21 @@ export function useTemplates() {
     [],
   );
 
+  const addCustomVariable = useCallback(
+    (variable: CustomVariable) =>
+      dispatch({ type: "ADD_CUSTOM_VARIABLE", variable }),
+    [],
+  );
+
+  const deleteCustomVariable = useCallback(
+    (key: string) => dispatch({ type: "DELETE_CUSTOM_VARIABLE", key }),
+    [],
+  );
+
   return {
     templates,
     allTemplates: state.templates,
+    customVariables: state.customVariables,
     filters: state.filters,
     sortBy: state.sortBy,
     addTemplate,
@@ -278,5 +349,7 @@ export function useTemplates() {
     incrementReplied,
     setFilter,
     setSortBy,
+    addCustomVariable,
+    deleteCustomVariable,
   };
 }

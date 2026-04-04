@@ -25,3 +25,9 @@ export type TemplateVariable =
   | "produit"
   | "niche"
   | "prenom_creatrice";
+
+export type CustomVariable = {
+  key: string;
+  label: string;
+  placeholder: string;
+};
