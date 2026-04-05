@@ -17,8 +17,8 @@ import { VariableHighlight } from "./variable-highlight";
 
 type TemplateFormData = {
   title: string;
-  channel: ContactChannel;
-  niche: BrandNiche;
+  channel: string;
+  niche: string;
   content: string;
 };
 
@@ -51,8 +51,8 @@ export function TemplateFormDialog({
 
   const [formKey, setFormKey] = useState<string | null>(null);
   const [title, setTitle] = useState("");
-  const [channel, setChannel] = useState<ContactChannel>("Instagram");
-  const [niche, setNiche] = useState<BrandNiche>("Skincare");
+  const [channel, setChannel] = useState<string>("Instagram");
+  const [niche, setNiche] = useState<string>("Skincare");
   const [content, setContent] = useState("");
   const [showPreview, setShowPreview] = useState(false);
 

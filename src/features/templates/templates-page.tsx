@@ -5,7 +5,6 @@ import { Plus, FileText } from "lucide-react";
 import { toast } from "sonner";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { dialogManager } from "@/features/dialog-manager/dialog-manager";
-import type { BrandNiche, ContactChannel } from "@/features/pipeline/types";
 import { useTemplates } from "./use-templates";
 import type { CustomVariable, MessageTemplate } from "./types";
 import { TemplateStats } from "./components/template-stats";
@@ -16,8 +15,8 @@ import { TemplateUsePanel } from "./components/template-use-panel";
 
 type TemplateFormData = {
   title: string;
-  channel: ContactChannel;
-  niche: BrandNiche;
+  channel: string;
+  niche: string;
   content: string;
 };
 

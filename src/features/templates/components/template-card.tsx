@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ChannelBadge } from "@/features/pipeline/components/channel-badge";
 import { NICHE_COLORS } from "@/features/pipeline/constants";
+import type { BrandNiche, ContactChannel } from "@/features/pipeline/types";
 import type { MessageTemplate } from "../types";
 import { getResponseRate, getRateColor, RATE_THRESHOLDS } from "../constants";
 import { VariableHighlight } from "./variable-highlight";
@@ -40,7 +41,7 @@ export function TemplateCard({
   const rate = getResponseRate(template.timesUsed, template.timesReplied);
   const rateColor = getRateColor(rate);
   const isPerformant = rate >= RATE_THRESHOLDS.high && template.timesUsed >= 5;
-  const nicheColor = NICHE_COLORS[template.niche];
+  const nicheColor = NICHE_COLORS[template.niche as BrandNiche];
 
   return (
     <div
@@ -52,7 +53,7 @@ export function TemplateCard({
     >
       {/* Header : canal + niche + badge performant */}
       <div className="flex items-center gap-2 px-4 pt-4 pb-2">
-        <ChannelBadge channel={template.channel} size="sm" />
+        <ChannelBadge channel={template.channel as ContactChannel} size="sm" />
         <span
           className="rounded-full px-2 py-0.5 text-[10px] font-semibold"
           style={{

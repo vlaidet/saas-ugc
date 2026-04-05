@@ -3,13 +3,13 @@ import type { BrandNiche, ContactChannel } from "@/features/pipeline/types";
 export type MessageTemplate = {
   id: string;
   title: string;
-  channel: ContactChannel;
-  niche: BrandNiche;
+  channel: string;
+  niche: string;
   content: string;
   timesUsed: number;
   timesReplied: number;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date | string;
+  updatedAt: Date | string;
 };
 
 export type TemplateFilters = {

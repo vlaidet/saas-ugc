@@ -11,6 +11,7 @@ import {
   SheetDescription,
 } from "@/components/ui/sheet";
 import { ChannelBadge } from "@/features/pipeline/components/channel-badge";
+import type { ContactChannel } from "@/features/pipeline/types";
 import type { CustomVariable, MessageTemplate } from "../types";
 import {
   extractVariables,
@@ -92,7 +93,10 @@ export function TemplateUsePanel({
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <ChannelBadge channel={template.channel} size="sm" />
+              <ChannelBadge
+                channel={template.channel as ContactChannel}
+                size="sm"
+              />
               <SheetTitle
                 className="text-sm font-bold"
                 style={{ color: "#3D2314" }}
