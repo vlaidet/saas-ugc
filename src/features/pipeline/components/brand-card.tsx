@@ -1,6 +1,6 @@
 import { Edit2, Trash2, Clock, TriangleAlert } from "lucide-react";
 import { InlineTooltip } from "@/components/ui/tooltip";
-import type { Brand } from "../types";
+import type { Brand, BrandNiche, BrandStatus, ContactChannel } from "../types";
 import { BrandAvatar } from "./brand-avatar";
 import { StatusBadge } from "./status-badge";
 import { ChannelBadge } from "./channel-badge";
@@ -28,7 +28,7 @@ export function BrandCard({
   needsFollowUp,
   isDragging = false,
 }: BrandCardProps) {
-  const nicheColor = NICHE_COLORS[brand.niche];
+  const nicheColor = NICHE_COLORS[brand.niche as unknown as BrandNiche];
 
   return (
     <div
@@ -47,7 +47,11 @@ export function BrandCard({
     >
       {/* BRAND HEADER */}
       <div className="flex items-start gap-2.5">
-        <BrandAvatar name={brand.name} niche={brand.niche} size="md" />
+        <BrandAvatar
+          name={brand.name}
+          niche={brand.niche as unknown as BrandNiche}
+          size="md"
+        />
         <div className="min-w-0 flex-1">
           <div className="flex items-start justify-between gap-2">
             <p
@@ -79,7 +83,7 @@ export function BrandCard({
 
       {/* STATUS */}
       <div className="mt-3">
-        <StatusBadge status={brand.status} />
+        <StatusBadge status={brand.status as unknown as BrandStatus} />
       </div>
 
       {/* RELANCER */}
@@ -114,7 +118,10 @@ export function BrandCard({
             {brand.contacts.length}
           </span>
           <span className="h-2.5 w-px" style={{ backgroundColor: "#EDE0D0" }} />
-          <ChannelBadge channel={brand.channel} size="sm" />
+          <ChannelBadge
+            channel={brand.channel as unknown as ContactChannel}
+            size="sm"
+          />
         </div>
 
         <div className="flex items-center opacity-40 transition-opacity duration-150 group-hover:opacity-100">

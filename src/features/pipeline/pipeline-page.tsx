@@ -25,14 +25,18 @@ type BrandFormData = {
 };
 
 type ContactFormData = {
-  date: string;
-  channel: ContactChannel;
+  date: Date | string;
+  channel: string;
   message: string;
-  response?: string;
+  response?: string | null;
 };
 
-export default function PipelinePage() {
-  const pipeline = usePipeline();
+type PipelinePageProps = {
+  initialBrands: Brand[];
+};
+
+export default function PipelinePage({ initialBrands }: PipelinePageProps) {
+  const pipeline = usePipeline(initialBrands);
   const [editingBrand, setEditingBrand] = useState<Brand | null>(null);
   const [brandFormOpen, setBrandFormOpen] = useState(false);
   const [contactHistoryOpen, setContactHistoryOpen] = useState(false);
@@ -57,8 +61,8 @@ export default function PipelinePage() {
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
-  const handleAddBrand = (data: BrandFormData) => {
-    pipeline.addBrand({
+  const handleAddBrand = async (data: BrandFormData) => {
+    void pipeline.addBrand({
       name: data.name,
       niche: data.niche as BrandNiche,
       channel: data.channel as ContactChannel,
@@ -66,7 +70,7 @@ export default function PipelinePage() {
       email: data.email || undefined,
       notes: data.notes || undefined,
       status: "À contacter",
-    } as Omit<Brand, "id" | "contacts" | "createdAt">);
+    });
     toast.success("Marque ajoutée");
     setEditingBrand(null);
     setBrandFormOpen(false);
@@ -74,7 +78,7 @@ export default function PipelinePage() {
 
   const handleEditBrand = (data: BrandFormData) => {
     if (!editingBrand) return;
-    pipeline.updateBrand(editingBrand.id, {
+    void pipeline.updateBrand(editingBrand.id, {
       name: data.name,
       niche: data.niche as BrandNiche,
       channel: data.channel as ContactChannel,
@@ -82,7 +86,7 @@ export default function PipelinePage() {
       email: data.email || undefined,
       notes: data.notes || undefined,
       status: editingBrand.status,
-    } as Omit<Brand, "id" | "contacts" | "createdAt">);
+    });
     toast.success("Marque mise à jour");
     setEditingBrand(null);
     setBrandFormOpen(false);
@@ -96,7 +100,7 @@ export default function PipelinePage() {
       action: {
         label: "Supprimer",
         onClick: async () => {
-          pipeline.deleteBrand(brandId);
+          await pipeline.deleteBrand(brandId);
           toast.success("Marque supprimée");
         },
       },
@@ -104,7 +108,7 @@ export default function PipelinePage() {
   };
 
   const handleAddContact = (brandId: string, contact: ContactFormData) => {
-    pipeline.addContact(brandId, {
+    void pipeline.addContact(brandId, {
       date: contact.date,
       channel: contact.channel,
       message: contact.message,
@@ -128,7 +132,7 @@ export default function PipelinePage() {
     if (editingBrand) {
       handleEditBrand(data);
     } else {
-      handleAddBrand(data);
+      void handleAddBrand(data);
     }
   };
 
@@ -304,7 +308,7 @@ export default function PipelinePage() {
                 onDelete={handleDeleteBrand}
                 onHistory={openContactHistory}
                 onStatusChange={(brandId, status) => {
-                  pipeline.changeStatus(brandId, status);
+                  void pipeline.changeStatus(brandId, status);
                   toast.success("Statut mis à jour");
                 }}
                 onReorder={(dragId, targetId, position, status) => {
@@ -320,7 +324,7 @@ export default function PipelinePage() {
                 onDelete={handleDeleteBrand}
                 onHistory={openContactHistory}
                 onStatusChange={(brandId, status) => {
-                  pipeline.changeStatus(brandId, status);
+                  void pipeline.changeStatus(brandId, status);
                   toast.success("Statut mis à jour");
                 }}
                 onDragStart={pipeline.setDragged}

@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/select";
 import { InlineTooltip } from "@/components/ui/tooltip";
 import { Edit2, Trash2, Clock, TriangleAlert } from "lucide-react";
-import type { Brand, BrandStatus } from "../types";
+import type { Brand, BrandStatus, BrandNiche, ContactChannel } from "../types";
 import { STATUSES, NICHE_COLORS, STATUS_CONFIG } from "../constants";
 import { BrandAvatar } from "./brand-avatar";
 import { ChannelBadge } from "./channel-badge";
@@ -102,9 +102,11 @@ export function ListView({
         </thead>
         <tbody className="bg-white">
           {brands.map((brand, idx) => {
-            const nicheColor = NICHE_COLORS[brand.niche];
+            const nicheColor =
+              NICHE_COLORS[brand.niche as unknown as BrandNiche];
             const followUp = needsFollowUp(brand);
-            const statusConf = STATUS_CONFIG[brand.status];
+            const statusConf =
+              STATUS_CONFIG[brand.status as unknown as BrandStatus];
             return (
               <tr
                 key={brand.id}
@@ -129,7 +131,7 @@ export function ListView({
                   <div className="flex items-center gap-2.5">
                     <BrandAvatar
                       name={brand.name}
-                      niche={brand.niche}
+                      niche={brand.niche as unknown as BrandNiche}
                       size="sm"
                     />
                     <div>
@@ -211,7 +213,9 @@ export function ListView({
                   </Select>
                 </td>
                 <td className="px-4 py-3">
-                  <ChannelBadge channel={brand.channel} />
+                  <ChannelBadge
+                    channel={brand.channel as unknown as ContactChannel}
+                  />
                 </td>
                 <td className="px-4 py-3">
                   <span

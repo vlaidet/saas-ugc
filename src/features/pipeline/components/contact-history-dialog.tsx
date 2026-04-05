@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import type { Brand, ContactEntry, ContactChannel } from "../types";
+import type { Brand, ContactEntry, ContactChannel, BrandNiche } from "../types";
 import { CHANNELS } from "../constants";
 import { BrandAvatar } from "./brand-avatar";
 import { Clock, MessageSquarePlus } from "lucide-react";
@@ -75,7 +75,11 @@ export function ContactHistoryDialog({
           style={{ borderBottom: "1px solid #F0E8DF" }}
         >
           <div className="flex items-center gap-3">
-            <BrandAvatar name={brand.name} niche={brand.niche} size="md" />
+            <BrandAvatar
+              name={brand.name}
+              niche={brand.niche as unknown as BrandNiche}
+              size="md"
+            />
             <div>
               <DialogTitle
                 className="text-base font-bold"

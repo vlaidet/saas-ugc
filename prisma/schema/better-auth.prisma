@@ -18,6 +18,7 @@ model User {
   feedbacks   Feedback[]
   members     Member[]
   invitations Invitation[]
+  brands      Brand[]
 
   role       String?
   banned     Boolean?

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-04-05
+
+FEATURE: Migrate pipeline from localStorage to PostgreSQL with Brand and BrandContact models
+FEATURE: Add server actions for brand CRUD operations (create, update, delete, changeStatus, addContact)
+CHORE: Import 470 cleaned brands from CSV into production Neon database
+
 ## 2026-04-04
 
 FEATURE: Add custom variables system to message templates — create, insert, and delete user-defined variables with inline form, auto-generated keys, and smart fallback in use panel

@@ -1,4 +1,5 @@
 import { getRequiredUser } from "@/lib/auth/auth-user";
+import { getBrandsByUserId } from "@/query/pipeline/get-brands";
 import PipelinePage from "@/features/pipeline/pipeline-page";
 import { Suspense } from "react";
 
@@ -15,6 +16,7 @@ export default function Page() {
 }
 
 async function RoutePage() {
-  await getRequiredUser();
-  return <PipelinePage />;
+  const user = await getRequiredUser();
+  const brands = await getBrandsByUserId(user.id);
+  return <PipelinePage initialBrands={brands} />;
 }

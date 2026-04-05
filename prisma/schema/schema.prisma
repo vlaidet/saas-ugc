@@ -21,3 +21,42 @@ model Feedback {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Brand {
+  id         String  @id @default(nanoid(11))
+  name       String
+  niche      String
+  channel    String
+  profileUrl String?
+  email      String?
+  notes      String?
+  product    String?
+  status     String  @default("À contacter")
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  contacts BrandContact[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@map("brand")
+}
+
+model BrandContact {
+  id       String   @id @default(nanoid(11))
+  date     DateTime
+  channel  String
+  message  String
+  response String?
+
+  brandId String
+  brand   Brand  @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@index([brandId])
+  @@map("brand_contact")
+}

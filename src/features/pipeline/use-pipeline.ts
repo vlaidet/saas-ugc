@@ -1,6 +1,8 @@
 "use client";
-import { useReducer, useEffect, useCallback } from "react";
+import { useReducer, useCallback } from "react";
 import { nanoid } from "nanoid";
+import { toast } from "sonner";
+import { resolveActionResult } from "@/lib/actions/actions-utils";
 import type {
   Brand,
   BrandStatus,
@@ -8,7 +10,13 @@ import type {
   PipelineFilters,
   PipelineView,
 } from "./types";
-import { MOCK_BRANDS } from "./mock-data";
+import {
+  createBrandAction,
+  updateBrandAction,
+  deleteBrandAction,
+  changeStatusAction,
+  addContactAction,
+} from "./pipeline.action";
 import { FOLLOWUP_DAYS } from "./constants";
 
 type PipelineState = {
@@ -19,11 +27,11 @@ type PipelineState = {
 };
 
 type PipelineAction =
-  | { type: "ADD_BRAND"; brand: Omit<Brand, "id" | "contacts" | "createdAt"> }
+  | { type: "ADD_BRAND"; brand: Brand }
   | {
       type: "UPDATE_BRAND";
       id: string;
-      updates: Omit<Brand, "id" | "contacts" | "createdAt">;
+      updates: Partial<Brand>;
     }
   | { type: "DELETE_BRAND"; id: string }
   | { type: "CHANGE_STATUS"; id: string; status: BrandStatus }
@@ -34,25 +42,19 @@ type PipelineAction =
       position: "before" | "after";
       status: BrandStatus;
     }
-  | { type: "ADD_CONTACT"; brandId: string; contact: Omit<ContactEntry, "id"> }
+  | { type: "ADD_CONTACT"; brandId: string; contact: ContactEntry }
   | { type: "SET_VIEW"; view: PipelineView }
   | { type: "SET_FILTER"; key: keyof PipelineFilters; value: string }
-  | { type: "SET_DRAGGED"; id: string | null }
-  | { type: "INIT"; brands: Brand[] };
+  | { type: "SET_DRAGGED"; id: string | null };
 
-const initialState: PipelineState = {
-  brands: [],
-  view: "kanban",
-  filters: {
-    niche: "all",
-    status: "all",
-    channel: "all",
-    search: "",
-    datePreset: "all",
-    dateFrom: "",
-    dateTo: "",
-  },
-  draggedBrandId: null,
+const initialFilters: PipelineFilters = {
+  niche: "all",
+  status: "all",
+  channel: "all",
+  search: "",
+  datePreset: "all",
+  dateFrom: "",
+  dateTo: "",
 };
 
 function pipelineReducer(
@@ -60,33 +62,17 @@ function pipelineReducer(
   action: PipelineAction,
 ): PipelineState {
   switch (action.type) {
-    case "INIT":
-      return { ...state, brands: action.brands };
-
     case "ADD_BRAND":
       return {
         ...state,
-        brands: [
-          ...state.brands,
-          {
-            ...action.brand,
-            id: nanoid(),
-            contacts: [],
-            createdAt: new Date().toISOString(),
-          },
-        ],
+        brands: [action.brand, ...state.brands],
       };
 
     case "UPDATE_BRAND":
       return {
         ...state,
         brands: state.brands.map((b) =>
-          b.id === action.id
-            ? {
-                ...b,
-                ...action.updates,
-              }
-            : b,
+          b.id === action.id ? { ...b, ...action.updates } : b,
         ),
       };
 
@@ -130,16 +116,7 @@ function pipelineReducer(
         ...state,
         brands: state.brands.map((b) =>
           b.id === action.brandId
-            ? {
-                ...b,
-                contacts: [
-                  ...b.contacts,
-                  {
-                    ...action.contact,
-                    id: nanoid(),
-                  },
-                ],
-              }
+            ? { ...b, contacts: [...b.contacts, action.contact] }
             : b,
         ),
       };
@@ -150,10 +127,7 @@ function pipelineReducer(
     case "SET_FILTER":
       return {
         ...state,
-        filters: {
-          ...state.filters,
-          [action.key]: action.value,
-        },
+        filters: { ...state.filters, [action.key]: action.value },
       };
 
     case "SET_DRAGGED":
@@ -242,30 +216,14 @@ function getDateRange(
   }
 }
 
-export function usePipeline() {
-  const [state, dispatch] = useReducer(pipelineReducer, initialState);
+export function usePipeline(initialBrands: Brand[]) {
+  const [state, dispatch] = useReducer(pipelineReducer, {
+    brands: initialBrands,
+    view: "kanban" as PipelineView,
+    filters: initialFilters,
+    draggedBrandId: null,
+  });
 
-  // Initialize from localStorage
-  useEffect(() => {
-    const saved = localStorage.getItem("pipeline-brands");
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        dispatch({ type: "INIT", brands: parsed });
-      } catch {
-        dispatch({ type: "INIT", brands: MOCK_BRANDS });
-      }
-    } else {
-      dispatch({ type: "INIT", brands: MOCK_BRANDS });
-    }
-  }, []);
-
-  // Save to localStorage whenever brands change
-  useEffect(() => {
-    localStorage.setItem("pipeline-brands", JSON.stringify(state.brands));
-  }, [state.brands]);
-
-  // Filter brands
   const filteredBrands = state.brands.filter((brand) => {
     if (state.filters.niche !== "all" && brand.niche !== state.filters.niche)
       return false;
@@ -293,7 +251,6 @@ export function usePipeline() {
     return true;
   });
 
-  // Helper to check if a brand needs follow-up
   const needsFollowUp = useCallback((brand: Brand): boolean => {
     if (brand.status === "Contactée") {
       if (brand.contacts.length === 0) {
@@ -313,6 +270,140 @@ export function usePipeline() {
     return false;
   }, []);
 
+  const addBrand = useCallback(
+    async (input: Omit<Brand, "id" | "contacts" | "createdAt">) => {
+      const optimisticId = nanoid(11);
+      const optimisticBrand: Brand = {
+        ...input,
+        id: optimisticId,
+        contacts: [],
+        createdAt: new Date().toISOString(),
+      };
+      dispatch({ type: "ADD_BRAND", brand: optimisticBrand });
+
+      try {
+        const created = await resolveActionResult(
+          createBrandAction({
+            name: input.name,
+            niche: input.niche,
+            channel: input.channel,
+            status: input.status,
+            profileUrl: input.profileUrl ?? undefined,
+            email: input.email ?? undefined,
+            notes: input.notes ?? undefined,
+            product: input.product ?? undefined,
+          }),
+        );
+        dispatch({
+          type: "UPDATE_BRAND",
+          id: optimisticId,
+          updates: { id: created.id },
+        });
+      } catch {
+        dispatch({ type: "DELETE_BRAND", id: optimisticId });
+        toast.error("Erreur lors de l'ajout de la marque");
+      }
+    },
+    [],
+  );
+
+  const updateBrand = useCallback(
+    async (id: string, updates: Partial<Brand>) => {
+      const { contacts: _, createdAt: __, ...safeUpdates } = updates;
+      dispatch({ type: "UPDATE_BRAND", id, updates: safeUpdates });
+
+      try {
+        await resolveActionResult(
+          updateBrandAction({
+            id,
+            data: {
+              name: safeUpdates.name,
+              niche: safeUpdates.niche,
+              channel: safeUpdates.channel,
+              status: safeUpdates.status,
+              profileUrl: safeUpdates.profileUrl ?? undefined,
+              email: safeUpdates.email ?? undefined,
+              notes: safeUpdates.notes ?? undefined,
+              product: safeUpdates.product ?? undefined,
+            },
+          }),
+        );
+      } catch {
+        toast.error("Erreur lors de la mise à jour");
+      }
+    },
+    [],
+  );
+
+  const deleteBrand = useCallback(
+    async (id: string) => {
+      const prev = state.brands.find((b) => b.id === id);
+      dispatch({ type: "DELETE_BRAND", id });
+
+      try {
+        await resolveActionResult(deleteBrandAction({ id }));
+      } catch {
+        if (prev) dispatch({ type: "ADD_BRAND", brand: prev });
+        toast.error("Erreur lors de la suppression");
+      }
+    },
+    [state.brands],
+  );
+
+  const changeStatus = useCallback(async (id: string, status: BrandStatus) => {
+    dispatch({ type: "CHANGE_STATUS", id, status });
+
+    try {
+      await resolveActionResult(changeStatusAction({ id, status }));
+    } catch {
+      toast.error("Erreur lors du changement de statut");
+    }
+  }, []);
+
+  const reorderBrand = useCallback(
+    (
+      dragId: string,
+      targetId: string,
+      position: "before" | "after",
+      status: BrandStatus,
+    ) => {
+      dispatch({ type: "REORDER_BRAND", dragId, targetId, position, status });
+      // Le reorder change potentiellement le status, donc on sync
+      changeStatusAction({ id: dragId, status }).catch(() => {
+        toast.error("Erreur lors du changement de statut");
+      });
+    },
+    [],
+  );
+
+  const addContact = useCallback(
+    async (brandId: string, contact: Omit<ContactEntry, "id">) => {
+      const optimisticContact: ContactEntry = {
+        ...contact,
+        id: nanoid(11),
+      };
+      dispatch({ type: "ADD_CONTACT", brandId, contact: optimisticContact });
+
+      try {
+        await resolveActionResult(
+          addContactAction({
+            brandId,
+            date:
+              typeof contact.date === "string"
+                ? contact.date
+                : contact.date.toISOString(),
+            channel: contact.channel,
+            message: contact.message,
+            response: contact.response ?? undefined,
+          }),
+        );
+      } catch {
+        toast.error("Erreur lors de l'ajout du contact");
+      }
+    },
+    [],
+  );
+
   return {
     state,
     brands: filteredBrands,
@@ -322,35 +413,16 @@ export function usePipeline() {
     draggedBrandId: state.draggedBrandId,
     needsFollowUp,
 
-    addBrand: (brand: Omit<Brand, "id" | "contacts" | "createdAt">) =>
-      dispatch({ type: "ADD_BRAND", brand }),
-
-    updateBrand: (
-      id: string,
-      updates: Omit<Brand, "id" | "contacts" | "createdAt">,
-    ) => dispatch({ type: "UPDATE_BRAND", id, updates }),
-
-    deleteBrand: (id: string) => dispatch({ type: "DELETE_BRAND", id }),
-
-    changeStatus: (id: string, status: BrandStatus) =>
-      dispatch({ type: "CHANGE_STATUS", id, status }),
-
-    reorderBrand: (
-      dragId: string,
-      targetId: string,
-      position: "before" | "after",
-      status: BrandStatus,
-    ) =>
-      dispatch({ type: "REORDER_BRAND", dragId, targetId, position, status }),
-
-    addContact: (brandId: string, contact: Omit<ContactEntry, "id">) =>
-      dispatch({ type: "ADD_CONTACT", brandId, contact }),
+    addBrand,
+    updateBrand,
+    deleteBrand,
+    changeStatus,
+    reorderBrand,
+    addContact,
 
     setView: (view: PipelineView) => dispatch({ type: "SET_VIEW", view }),
-
     setFilter: (key: keyof PipelineFilters, value: string) =>
       dispatch({ type: "SET_FILTER", key, value }),
-
     setDragged: (id: string | null) => dispatch({ type: "SET_DRAGGED", id }),
   };
 }

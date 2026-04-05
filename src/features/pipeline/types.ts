@@ -18,23 +18,24 @@ export type BrandStatus =
 
 export type ContactEntry = {
   id: string;
-  date: string; // ISO string
-  channel: ContactChannel;
+  date: Date | string;
+  channel: string;
   message: string;
-  response?: string;
+  response?: string | null;
 };
 
 export type Brand = {
   id: string;
   name: string;
-  niche: BrandNiche;
-  channel: ContactChannel;
-  profileUrl?: string;
-  email?: string;
-  notes?: string;
-  status: BrandStatus;
+  niche: string;
+  channel: string;
+  profileUrl?: string | null;
+  email?: string | null;
+  notes?: string | null;
+  product?: string | null;
+  status: string;
   contacts: ContactEntry[];
-  createdAt: string; // ISO string
+  createdAt: Date | string;
 };
 
 export type DateRangePreset =

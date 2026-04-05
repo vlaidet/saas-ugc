@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useMemo } from "react";
 import { Search, X, Edit2 } from "lucide-react";
-import type { Brand } from "../types";
+import type { Brand, BrandNiche, BrandStatus } from "../types";
 import { BrandAvatar } from "./brand-avatar";
 import { StatusBadge } from "./status-badge";
 
@@ -217,7 +217,7 @@ export function CommandPalette({
                 >
                   <BrandAvatar
                     name={result.brand.name}
-                    niche={result.brand.niche}
+                    niche={result.brand.niche as unknown as BrandNiche}
                     size="sm"
                   />
                   <div className="min-w-0 flex-1">
@@ -228,7 +228,9 @@ export function CommandPalette({
                       >
                         {result.brand.name}
                       </span>
-                      <StatusBadge status={result.brand.status} />
+                      <StatusBadge
+                        status={result.brand.status as unknown as BrandStatus}
+                      />
                     </div>
                     {result.matchField === "contact" && result.matchText ? (
                       <p
