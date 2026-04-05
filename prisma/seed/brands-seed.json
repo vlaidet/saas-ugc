@@ -1,0 +1,4702 @@
+[
+  {
+    "name": "Shark",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Détacheur",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Dusgo",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "En discussion",
+    "email": "antoine@dustgo.fr",
+    "product": "Shampooineuse",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Dreame",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "collab-fr@dreame.tech",
+    "product": "V20 pro aspirateur sans fil",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bestway",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "bestway.influence@gmail.com",
+    "product": "Matelas gonflable",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Beurer",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "cdfconsulting@outlook.fr",
+    "product": "Patch chauffant menstruel",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Aryalush",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "contact@aryalush.com",
+    "product": "Epilateur lumière pulsée",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Celesta",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Sèche cheveux",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Sun",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Capsule lave vaisselle",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cofee Webstore",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Dosette dolce gusto",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Lékué",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Moule à glace Prochaine campagne",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Contigo",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Mug isotherm",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "BUproduct",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Mug à emporter",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bipod",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Starter pack green",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Hydrologie",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Fruggies",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Pack découverte Agence",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Jimmy Joy",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Yfood",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Idalia",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "m.tellier@idalia-group.com",
+    "product": "Framboises au chocolat blanc",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Tooa",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Machine à glace",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Soyo matcha",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Matcha (vanille ou cérémonie)",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Matcha & Co",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "marta@matchaandco.com",
+    "product": "Matcha vanille",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Brio",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Canette (envoyer)",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ma tcha tcha",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Epycure",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Cure ventre plat Youdji",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Sambucol",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gomme à mâcher",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Beesline",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Produit visage",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Soskin",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Protection solaire",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Health Coaching",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Accessoires pilate",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Baouw organic nutrition",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Vida XL",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "influencer@vidaxl.com",
+    "product": "Meuble litière pour chat",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Happy garden",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Oscar & Co",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Laisse + collier",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Jinnkiss",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Tapis chien",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Club Noé",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Luméa Candle",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Bougies perlées",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ava & May",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "emma.schmidlin@ava-may.fr",
+    "product": "Set Santorin",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Anaoo",
+    "niche": "Maison",
+    "channel": "Formulaire",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Touloube",
+    "niche": "Maison",
+    "channel": "Formulaire",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Wansiven",
+    "niche": "Maison",
+    "channel": "Formulaire",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "5Five",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Bout de canapé indus",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Joseph Joseph",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Panier à linge tota one",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Brabentia",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "collaborations.fr@brabantia.com",
+    "product": "Bocaux carrés et coupe légumes",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Moulinex",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ferrero Rocher",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Calendrier de l’avent",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Panda tea",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Thés XL",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cheerz",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Album ou magnet ou tirage Youdji",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Curver",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Qwetch",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Pastilles aromatisante",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Pummba",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Fauteuil Nimbus Sillón",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Nutreov",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ni Cosmetic",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Steam one",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "rebecca@steam-one.com",
+    "product": "Karl XL déffroisseur",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bacanha",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Sirop vanille",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Karcher",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Nettoyeur de vitres",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ryobi",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Souffleur / broyeur",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Siemens",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Machine à café EQ900",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Batiste",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gamme sensible",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bamix",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Coffret Healthy",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Uniqlo",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Madame d’Alexis",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Rituel cheveux gras",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Lokietluna",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Monbana chocolaterie",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Beez sucette glacées",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Eau exquise",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "N’importe",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "PawPix",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Harnais + laisse + sac à crottes",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bonjour",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "jonas@bonjourdrink.co",
+    "product": "Alternative café",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Colgate",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Blanchiment dentaire",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Lustucru",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Pâtes complètes",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Narwal",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Freo X Ultra",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "So Shape",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "partnership@soshape.com",
+    "product": "Cure 30j",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Brain effect",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Produit collagène",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Panzani",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Pâtes complètes",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Calor",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Défroisseur à main",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "My variation",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "eva@myvariations.com",
+    "product": "Brosse à dents électrique bleu",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Nescafé",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Café dolce gusto",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Dogfy Diet",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "iRobot",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Robot aspirateur et laveur Roomba Combo® i5",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Souvence",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Album Grèce",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Braun",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Rasoir Silk-épil 9 Flex",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Mathon",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "partenariats@mathon.fr",
+    "product": "Plaques madeleine + feuille four",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Plaids Cocooning",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Ponchos",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Mylky",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Robot à lait",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ninja",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Four à pizza",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ulike",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "contacteurope@ulikeglobal.com",
+    "product": "Ulike Air 3",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "3 Suisses",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Paire de draps",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Blanche porte",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Paire de draps",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Elmex",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gamme sensitive",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Hesperide jardin",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Transat Ocala",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Zoo plus",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "L’arbre à chat en forme de sapin de noël marque Giantex",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Best mobilier",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Plaid",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Conforama",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Bibliothèque Sophia",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "But",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Table basse Tarento",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bret’s",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gamme sarrasin",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Justin Bridou",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "A partager mini",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Boulanger",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gamme reconditionner",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Yepoda",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bricomarché",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Lagrange",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gaufrier premium",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Franui",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Framboises au chocolat",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bissell",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Défroisseur Steam shot",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "La redoute",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Paire de draps",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Smile touch",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Dentifrice blanchissant",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "X Gimi",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "affiliate@xgimi.com",
+    "product": "MOGO 4 PRO",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cash piscine",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Lumière flottante + jet cascade",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Philips",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Extracteur de jus Viva",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Roborock",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "F25 ACE",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Gü dessert",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "marie.durrieu@gupuds.com",
+    "product": "Dessert",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Smol",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Pack essai Portfolio fini",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Hesiode home",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Set de bain",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Brita",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "crichard@brita.net",
+    "product": "Carafe filtre Flow",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Anthèse",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "anthesefrance@gmail.com",
+    "product": "Gamme cheveux naturel",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Zestie",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gamme pomme-concombre",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ducray",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Sérum anti-imperfection",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bijoux Thyca",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Collier et boucle",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Glamour Paris accessoires",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Chouchous satiné",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Solor Avenue",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "soloravenue@gmail.com",
+    "product": "Bagues",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Kosmopellis",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Patch yeux/lèvres",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "La crique",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Sérum teinté et poudre",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Fabs perfum",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Parfum",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Musc intime",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Rituel à la rose",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Alyscamps",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Huile démaquillante",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Maxi bazar",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Nakd",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Barre d’encas",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Seeberger",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Rainett",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gamme maison",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Pyrex",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Lot batch cooking",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Barilla",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Pâte completes",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Duralex",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gamme pâtisserie",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Halara",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Tailleur",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ricoré",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Paalm",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Crème de douche et brume de parfum",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cdiscount",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Lumière extèrieur",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Mova",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Friteuse à air chaud",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ziipa",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Wild",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Déodorant",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Nemerys",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Box du mois",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cabane Peydebe",
+    "niche": "Voyage",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Concept en lui même",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ben & Jerry’s",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Maxi coffee",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Wisely Market",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gourdes thermiques",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Abeli",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Poméol",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Cure immunité",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Neorya",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Aarke",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Mysoda",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Machine Woody",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Lipton ice tea",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ribambelle",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Sistema",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Le dressing de Paolina",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Robe",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "La fée de la gourmandise",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Ourson à infuser",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "L’essence Paris",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Plumaïa (malle pour femme)",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Pure altitude",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Patch et diffuseur",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "LXIR",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cut by fred",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Beauty sense",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Monacura",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Pureva",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Filtre à eau",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Otonomie",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Clermont ferrand",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "900.care",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Kit essentiel Youdji",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "My karacare",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "marketing@mykaracare.com",
+    "product": "Cure hair boost adn",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Noreva",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Soins hydratant pieds",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Solina",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Robe",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bois de Luna, ecolodges",
+    "niche": "Voyage",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Dôme Cassiopée",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Oh Polly",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Blyss",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Boisson digestion et énergie pomme",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Mium",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gummies confort menstruel",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Laboratoire Vinci",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Leitz",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Bureau assis debout compacte",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Mamie réglise",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Kit spéciale douillette",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Dégusta box",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Youdji",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Savum",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Savon solide avec base",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Emma Noël",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Création Mél",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Oh my jelly",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Masque",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Grohe france",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Aura plus nutrition",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Meyshaa",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Le dressing de Nana",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Robe",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Maybe Paris",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Madame à dit oui",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bru",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Machine à thé",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Vapure",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "hello@vapure.co",
+    "product": "Pack découverte bombes de douche",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Caps’ me",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Dosette de café réutilisable",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Earo",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Nettoyeur auriculaire avec caméra",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "French Bandit",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Accessoires animaux",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Aroma matcha",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Pack ubé",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Hill’s",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Croquette et pâté chaton",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Klorane",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ecovacs robotics",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Ne recois pas les messages",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Hilde & Phil",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "collab@hilde-phil.com",
+    "product": "Grattoir canapé",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Atelier vert sapin",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Création perso animaux",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Eclae",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Flayre france",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "contact@flayre-lab.com",
+    "product": "Coffret vanille ambrée",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cecotec",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "mariannavagni@cecotec.es",
+    "product": "CeramicCare 14in1 AirGlam Luxury bleu",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Europe & nature",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Meuble Lufe",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "ABC Meuble",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Hecko",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Meuble Horigin 1800 n°0027",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Pier Import",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Vitavea",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Kings Canapé",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Table d’appoint mini",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Matchaflix",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "colaboraciones@matchaflix.com",
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Organic Shop Cosmetics",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Boisson Mé-Mé",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cabaia",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Portefeuille",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Petlibro",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Litière automatique",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Gourmandiz",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Pack best seller",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "C-Marl",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Moustiquaire sur mesure",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Arthur Martin Home",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Crêpe party",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Kapten & Son",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Essential Set Bergen Pro Sandstone",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "GYL Valise",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Deal signé",
+    "email": "cvarin@imlgroup.fr",
+    "product": "Set de 2 valise rigide intemporelle",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Maison Aubertin",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Set 2 tables de nuit 2 tiroirs - Bois - OGGI",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "La capsulerie",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "info@lacapsulerie.com",
+    "product": "Capsules Dolce Gusto",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Starbucks",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Capsule pour Noël",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Drink focus",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Goût chocolat",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Fliq it",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Ecran retour caméra",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Brother france",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "k.dezeque@merkutio.fr",
+    "product": "Imprimante jet d'encre multifonction 3-en-1 compacte sans fil",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Reisenthel",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Carrycruiser (chariot de marché)",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Westwing",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Housse pour boule et sapin",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Lala home pet",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": null,
+    "product": "Litière automatique",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Juste Paris",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Routine purifiante",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Theobroma beauty",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Duo réparation cheveux",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Omaïdo beauty",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Routine anti imperfection",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Rowenta",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "X-Force flex normal",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Shark Beauty",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Sèche cheveux",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "My libup",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Carnet complet",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Laboratoire Novexpert",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Collagène +",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "AJY pour toi",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "contact@a-j-y.com",
+    "product": "Complément cheveux et collagène",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Jadia skin&beauty",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Maison Hädenn",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Kahng",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Routine skincare quotidien",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Eve & co",
+    "niche": "Autre",
+    "channel": "Formulaire",
+    "status": "Contactée",
+    "email": null,
+    "product": "Culottes menstruelles",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "LiNote",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "clemence@linote.fr",
+    "product": "Tablette interactive grand parents",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Nuoro",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Nordlys",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Myriamk hair",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gamme repair",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Everdrop",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "ugc-creator@everdrop.de",
+    "product": "Acide citrique et bicarbonate",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Topicream",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Crème mains et lait corps rechargeable",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Margot & Tita",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Calendrier du nouvel an",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Hygée",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Collagène et matcha",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Pro Breeze",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Mousseur à lait",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Layli anti-poils",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Sérum et crème anti-poils",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Orlivia lingeries",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "pro@orlivia.com",
+    "product": "Culottes amincissantes noir/beige",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Honey balm",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Baume à lèvres",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Build my Bear",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "contact@buildmybear.fr",
+    "product": "Christmas Eve Bear et Kisses Bear",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Fondussimo",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "marketing@fondussimo.com",
+    "product": "Appareil à fondu 3 en 1",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Axelleroi collant",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Collant plumetis",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Soya paris",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Oreiller 3.0",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cherico",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Box 50 sticks",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ubé & Chill",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Théobroma",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "La crème libre",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Amaframe",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cygnes colland",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Kube box livre",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Albal",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Maxizoo",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Cuvette Trixie pour radiateur",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Sauvai cosmetics",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Deal signé",
+    "email": "contact@sauvai.com",
+    "product": "Pack rituel soin du cuir chevelu sensible",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Balsam Hill",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Composition de Noël végétal pomme d’amour",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "St Michel madeleines",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Calendrier de l’avent",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ricola",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Drink cubes",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Stihl France",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Déflecteur pour taille-haie",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ocean clock",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Horloge Sunrise",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Monin",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Coffret sirop pour boisson de Noël",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Husqvarna",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Harnais balance 35B",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Les collant frenchie",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Collant polaire et chaud",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Makitaa",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "webmaster@makita.fr",
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Echo",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Tronçonneuse",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Wagner",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Parkside",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Pet kit",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Fontaine à eau automatique",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Vital proteins",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Collagène fraise",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Blanera Planificateurs",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Planificateur 2026",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Le dressing d’Axelle",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Pantalon tailleur",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "MCC collection",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "En discussion",
+    "email": "aloumbesabine@gmail.com",
+    "product": "Robe rouge noël et combi noir nouvel an",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bijou madeleines",
+    "niche": "Food",
+    "channel": "Formulaire",
+    "status": "Refus",
+    "email": "infos@bijou.com",
+    "product": "Calendrier, rolinettes et madeleines coques",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Zoomalia",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Fontaine à eau Bandit",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Clémence & Vivien",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Baume parfum fleur d’été",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Esteban Paris Parfum",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gamme Noël",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Natalie official",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Bague fil du destin",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Mono Skincare",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Coffret peau équilibré",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Poudrée paris",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Poudrée Madagascar",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Piaparis",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Boucles Trois",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Desktronic",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Chaise de bureau SitOne",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "WalkingPad",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "WalkingPad Z3 Hybrid",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Gyal",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Robe sequin doré clair",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "NL & Sens",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gamme anti-chute",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Goberlote",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Saladier Calisto",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Luna concept",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Combi Louise",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Maison Soel",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Robe Talia",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Maison Théerie",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Thé + téière",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Easy dressing",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Robe dentelle bordeaux Wanda (+ Claire?)",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bianochy",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Bougies gourmande",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Unicehair",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Perruque",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Aurélienne Paris",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Robe cassiane mi-longue",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Fluff France",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Lait à la vanille visage",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Revivecode",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Masque hydratant",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Tous mes parfum",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Coffret de Noël",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Skin & out",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Box bento",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Nacomi fr",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Combo anti-acné",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Element skincare",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Routine anti-imperfections",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Pers skincare",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Crème légère visage / contour des yeux",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Jejuskin",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Masque visage",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Charlotte lingerie",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Body + pantalon",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Lao Care",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Cure régénérante complète",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Remington fr",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Coffret Smooth",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cob Dress",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Bera dress beige",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "1944 Paris",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gamme fleur d’oranger corps",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Tala Ubé",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Ubé",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Elialys",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Bougie hivernal",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Retroprojo",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Projo ultra HD",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Onheira",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Taie en soie",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Eureka",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Aspi robot",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Vue.swiss",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "collabs@vueswiss.com",
+    "product": "Patch visage + tonic et crème",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Les mauricettes",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Robe dorée Ophélie",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Far & Away",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Tableware set",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Etoe",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "media@etoeofficial.com",
+    "product": "ETOE Starfish plus",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Arti tree",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Sapin de Noël",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Royatonic",
+    "niche": "Voyage",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Deux entrées",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Alphanova",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Lait corps et huile sèche",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Baïta home",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Table de chevet",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cat litter pail",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Poubelle pour litière chat",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Luméo créative",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Plafonnier led bois",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Poudré bijoux Paris",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Calendrier de l’après bijoux",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Gulcan Home",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Vaisselle / déco",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Sweet plaid",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Sweet plaid de Noël",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ausitôt bon",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Box plat cuisinés sous-vide",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Asambeauty",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Coffret fond de teint mousse et pinceau",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Emprunte mon toutou",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Balade pour chien",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Team Sensation",
+    "niche": "Voyage",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Chiens de traîneau",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Kiara flow",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Pomme de douche changeable",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Petrebels",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Arbre à chat Vista 170 cappucino",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Les Razpoukets",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Plaid spécial animaux",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Noka Matcha",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Matcha cérémonie et kit préparation",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Féli nature",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "support@feli-nature.com",
+    "product": "Arbre à chat fleur",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bloon Paris",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "collabs@bloon-paris.com",
+    "product": "Siège ballon original ivoire",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Homycat",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Griffoir personnalisé",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Momo Cotton",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "collab@momo-cotton.com",
+    "product": "Parure de lit",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Collavie",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Acide hyaluronique + patch duo or",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Drapaki Rufi",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Griffoir carrousel",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Puréality Paris",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Lify Hair care",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cénée",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Rouge à lèvres liquide",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Sodina",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Gel nettoyant acné",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Femini’tea",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Détox",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Rose baie",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Routine trio ricin et kératine",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Hollis",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Tempdrop",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Les joyaux d’Auré",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Piercing nombril",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Dunelace",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Kit couture Clara",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "C’Leene",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ixage Cosmétique",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Hair Ritual",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Arnaud Paris",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "La box Trevell",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Eclo",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Agamy",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Brosse cheveux",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Serge d’Estel Paris",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Produit capillaire",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ultra Grime France",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "emilie.tanrattana@nuvik.eu",
+    "product": "Lingette de nettoyage XXL animaux et multi uasage",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bestron",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "verkauf@bestron.com",
+    "product": "Plancha XL + gaufrier XL",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Miro",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Micro-fibre",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bokabas",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Naisture",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "mkt@weekendglow.com",
+    "product": "Masque visage",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Aloe Paris",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Amaryllis",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Lauvée",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Apnée",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Riigid",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Valise",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Purr Nook",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Arbre à chat",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Neutrient",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Vanillya",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Vanille de Madagascar",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Patrice mulato",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Hurom France",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Extracteur de jus",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "By Sidde",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Pinup Secret",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Provence botanical",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Sérum chute de cheveux",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Corioliss",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Epha candle",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Marly & Dan",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "lou@marly-dan.com",
+    "product": "Friandises anti boule de poil et digestion",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Tavo Pets",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Fauteuil suspendu",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Kazemi Cosmétics",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Lolynap",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Bougie gourmandes et fondants",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bebeto",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Trü Frü",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Onvaya",
+    "niche": "Maison",
+    "channel": "Formulaire",
+    "status": "Contactée",
+    "email": "info@heimundbuero.de",
+    "product": "Lot de 6 paires invitée pantoufles",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Monka",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Neutraliz",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "L’UNE Cosmetics",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Talismara",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Etat Pur",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Seoni",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Séfia",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "marketing@sefia.co",
+    "product": "Routine 3 produit + bandeau",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ocili",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Nirvita",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Skinorea",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Rose Lane Paris",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Emily’s Pillow",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Davines france",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "D.Licious",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Jilypet",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "hello@jilypet.com",
+    "product": "Litière agglomérant",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Elan",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Avea",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "pr@avea-life.com",
+    "product": "Complément collagène et digestion",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "1+3",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Inspirante",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Wowen Warriors",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Lang water",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Nashi argan",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "noelly.accossato@landoll.it",
+    "product": "Routine Energie hair",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Erborian",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Hello Klen",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "soumya@helloklean.com",
+    "product": "Pommeau filtrant",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "La bonne brosse",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Jod Cosmetics",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Biologist-Mood",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "La prune de l’aube",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Le comptoir français du thé",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Pier Augé",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bottle Bottle",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Eloane",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Pauzz",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Moguo Paris",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bêl by Alison",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Cotton Candy",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Sand’rillon chaussures",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Luneale",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "hello@luneale.co",
+    "product": "Mousse nettoyante et infusion",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "My ellune",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "paingone@distec.be",
+    "product": "Appareil pour règles douloureuse",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Olivella",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "marketing@olivellaline.com",
+    "product": "Crème visage et shampoing",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Koka",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bru compagnie",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "mz@bru-tea.com",
+    "product": "Machine + 2 sachets",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Joy Buy",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Colibri skincare",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Jimmy",
+    "niche": "Électroménager",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Klype",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Misseco Ube",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Epilo store",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Nesugar life",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Mini fer à repasser de voyage",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Sport Shero",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Refus",
+    "email": "info@sportshero.nl",
+    "product": "Tapis de marche Basic",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Nuage",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "natacha@resnack.fr",
+    "product": "Barbe à papa sans sucre",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Lumixia",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "recrutement@lumixia.fr",
+    "product": "Lumière autocollante mur",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Byoma",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "pr@byoma.com",
+    "product": "Kit de 5 produits nettoyage",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Lodges Avergnes Longues",
+    "niche": "Voyage",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Nuit ou WE avec activitée",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Rexaline",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "fFanny@grenadine-rp.com",
+    "product": "Sérum et lotion",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Beauty Sané",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Flamarda",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Linge de bain",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Kos Paris",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Onagrine Paris",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Imao",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Parfum voiture",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Fré Skincare",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Omg Bubble tea",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Moft officiel",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Coque de tél trépied",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bazik Cosmétics",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "bazikcosmetics@gmail.com",
+    "product": "BB crème",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Art29",
+    "niche": "Voyage",
+    "channel": "Instagram",
+    "status": "À contacter",
+    "email": null,
+    "product": "Hairspa",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Temple Spring",
+    "niche": "Mode",
+    "channel": "Formulaire",
+    "status": "En discussion",
+    "email": "customerservice@templespring.com",
+    "product": "Set pont de bain",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Bloom you",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Notino",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Wakey Cosmétiques",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ello Drinks",
+    "niche": "Food",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Maïlyn beauty",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Sense of Reasons",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Kanaya",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Ogl",
+    "niche": "Mode",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Chalet l’Anorak Super Besse",
+    "niche": "Voyage",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "La trinitaine",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Adventure Center",
+    "niche": "Voyage",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "clementine@adventurecenter.fr",
+    "product": "Entrée activitée",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "La Fourche",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Hero Cosmétiques",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "casting@fiftyfive.group",
+    "product": "Patch bouton",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Centre Ikihora",
+    "niche": "Voyage",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Demeliss",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": "Coiffage cheveux",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "DO&KA animalerie",
+    "niche": "Autre",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Les lodges de Lemptegy",
+    "niche": "Voyage",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": null,
+    "product": null,
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Laboratoire Druide France",
+    "niche": "Skincare",
+    "channel": "Instagram",
+    "status": "Contactée",
+    "email": "beaute@commeunebavarde.com",
+    "product": "Shampoing et après shampoing",
+    "notes": null,
+    "profileUrl": null
+  },
+  {
+    "name": "Temina",
+    "niche": "Maison",
+    "channel": "Instagram",
+    "status": "Deal signé",
+    "email": "contact@temina.fr",
+    "product": "Serviette exfoliante",
+    "notes": null,
+    "profileUrl": null
+  }
+]
