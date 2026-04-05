@@ -7,7 +7,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 import { dialogManager } from "@/features/dialog-manager/dialog-manager";
 import type { BrandNiche, ContactChannel } from "@/features/pipeline/types";
 import { useTemplates } from "./use-templates";
-import type { MessageTemplate } from "./types";
+import type { CustomVariable, MessageTemplate } from "./types";
 import { TemplateStats } from "./components/template-stats";
 import { TemplateFilters } from "./components/template-filters";
 import { TemplateCard } from "./components/template-card";
@@ -21,8 +21,16 @@ type TemplateFormData = {
   content: string;
 };
 
-export function TemplatesPage() {
-  const store = useTemplates();
+type TemplatesPageProps = {
+  initialTemplates: MessageTemplate[];
+  initialCustomVariables: CustomVariable[];
+};
+
+export function TemplatesPage({
+  initialTemplates,
+  initialCustomVariables,
+}: TemplatesPageProps) {
+  const store = useTemplates({ initialTemplates, initialCustomVariables });
 
   // Dialog de création / édition
   const [formOpen, setFormOpen] = useState(false);
@@ -36,7 +44,7 @@ export function TemplatesPage() {
   );
 
   const handleCreate = (data: TemplateFormData) => {
-    store.addTemplate(data);
+    void store.addTemplate(data);
     toast.success("Template créé");
     setFormOpen(false);
     setEditingTemplate(null);
@@ -44,7 +52,7 @@ export function TemplatesPage() {
 
   const handleEdit = (data: TemplateFormData) => {
     if (!editingTemplate) return;
-    store.updateTemplate(editingTemplate.id, data);
+    void store.updateTemplate(editingTemplate.id, data);
     toast.success("Template mis à jour");
     setFormOpen(false);
     setEditingTemplate(null);
@@ -59,7 +67,7 @@ export function TemplatesPage() {
       action: {
         label: "Supprimer",
         onClick: async () => {
-          store.deleteTemplate(id);
+          await store.deleteTemplate(id);
           toast.success("Template supprimé");
         },
       },
@@ -67,12 +75,12 @@ export function TemplatesPage() {
   };
 
   const handleDuplicate = (id: string) => {
-    store.duplicateTemplate(id);
+    void store.duplicateTemplate(id);
     toast.success("Template dupliqué");
   };
 
   const handleMarkReplied = (id: string) => {
-    store.incrementReplied(id);
+    void store.incrementReplied(id);
     toast.success("Réponse comptabilisée");
   };
 
@@ -82,7 +90,7 @@ export function TemplatesPage() {
   };
 
   const handleUsed = (id: string) => {
-    store.incrementUsed(id);
+    void store.incrementUsed(id);
   };
 
   const openEdit = (template: MessageTemplate) => {

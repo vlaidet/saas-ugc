@@ -5,6 +5,9 @@
 FEATURE: Migrate pipeline from localStorage to PostgreSQL with Brand and BrandContact models
 FEATURE: Add server actions for brand CRUD operations (create, update, delete, changeStatus, addContact)
 CHORE: Import 470 cleaned brands from CSV into production Neon database
+FEATURE: Migrate message templates from localStorage to PostgreSQL with MessageTemplate and CustomVariable models
+FEATURE: Add server actions for template CRUD operations (create, update, delete, duplicate, incrementUsed, incrementReplied)
+CHORE: Import 7 message templates into production Neon database
 
 ## 2026-04-04
 

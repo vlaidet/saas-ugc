@@ -13,12 +13,14 @@ model User {
   resendContactId String?
 
   // Outgoing
-  sessions    Session[]
-  accounts    Account[]
-  feedbacks   Feedback[]
-  members     Member[]
-  invitations Invitation[]
-  brands      Brand[]
+  sessions         Session[]
+  accounts         Account[]
+  feedbacks        Feedback[]
+  members          Member[]
+  invitations      Invitation[]
+  brands           Brand[]
+  messageTemplates MessageTemplate[]
+  customVariables  CustomVariable[]
 
   role       String?
   banned     Boolean?

@@ -1,42 +1,44 @@
 "use client";
 
-import { useReducer, useEffect, useMemo, useCallback } from "react";
+import { useReducer, useMemo, useCallback } from "react";
 import { nanoid } from "nanoid";
+import { toast } from "sonner";
+import { resolveActionResult } from "@/lib/actions/actions-utils";
 import type {
   CustomVariable,
   MessageTemplate,
   TemplateFilters,
   TemplateSortBy,
 } from "./types";
-import { MOCK_TEMPLATES, getResponseRate } from "./constants";
-
-const STORAGE_KEY = "message-templates";
-const CUSTOM_VARIABLES_KEY = "custom-variables";
+import { getResponseRate } from "./constants";
+import {
+  createTemplateAction,
+  updateTemplateAction,
+  deleteTemplateAction,
+  duplicateTemplateAction,
+  incrementUsedAction,
+  incrementRepliedAction,
+  addCustomVariableAction,
+  deleteCustomVariableAction,
+} from "./templates.action";
 
 type TemplateState = {
   templates: MessageTemplate[];
   customVariables: CustomVariable[];
   filters: TemplateFilters;
   sortBy: TemplateSortBy;
-  initialized: boolean;
 };
 
 type TemplateAction =
-  | { type: "INIT"; templates: MessageTemplate[] }
-  | {
-      type: "ADD";
-      template: Omit<
-        MessageTemplate,
-        "id" | "createdAt" | "updatedAt" | "timesUsed" | "timesReplied"
-      >;
-    }
+  | { type: "ADD"; template: MessageTemplate }
+  | { type: "UPDATE_ID"; oldId: string; newId: string }
   | {
       type: "UPDATE";
       id: string;
       data: Partial<Omit<MessageTemplate, "id" | "createdAt">>;
     }
   | { type: "DELETE"; id: string }
-  | { type: "DUPLICATE"; id: string }
+  | { type: "DUPLICATE"; source: MessageTemplate }
   | { type: "INCREMENT_USED"; id: string }
   | { type: "INCREMENT_REPLIED"; id: string }
   | { type: "SET_FILTER"; key: keyof TemplateFilters; value: string }
@@ -44,31 +46,18 @@ type TemplateAction =
   | { type: "ADD_CUSTOM_VARIABLE"; variable: CustomVariable }
   | { type: "DELETE_CUSTOM_VARIABLE"; key: string };
 
-const initialState: TemplateState = {
-  templates: [],
-  customVariables: [],
-  filters: { channel: "all", niche: "all", search: "" },
-  sortBy: "responseRate",
-  initialized: false,
-};
-
 function reducer(state: TemplateState, action: TemplateAction): TemplateState {
   switch (action.type) {
-    case "INIT":
-      return { ...state, templates: action.templates, initialized: true };
+    case "ADD":
+      return { ...state, templates: [action.template, ...state.templates] };
 
-    case "ADD": {
-      const now = new Date().toISOString();
-      const newTemplate: MessageTemplate = {
-        ...action.template,
-        id: nanoid(),
-        timesUsed: 0,
-        timesReplied: 0,
-        createdAt: now,
-        updatedAt: now,
+    case "UPDATE_ID":
+      return {
+        ...state,
+        templates: state.templates.map((t) =>
+          t.id === action.oldId ? { ...t, id: action.newId } : t,
+        ),
       };
-      return { ...state, templates: [...state.templates, newTemplate] };
-    }
 
     case "UPDATE":
       return {
@@ -86,38 +75,17 @@ function reducer(state: TemplateState, action: TemplateAction): TemplateState {
         templates: state.templates.filter((t) => t.id !== action.id),
       };
 
-    case "DUPLICATE": {
-      const source = state.templates.find((t) => t.id === action.id);
-      if (!source) return state;
-      const now = new Date().toISOString();
+    case "DUPLICATE":
       return {
         ...state,
-        templates: [
-          ...state.templates,
-          {
-            ...source,
-            id: nanoid(),
-            title: `${source.title} (copie)`,
-            timesUsed: 0,
-            timesReplied: 0,
-            createdAt: now,
-            updatedAt: now,
-          },
-        ],
+        templates: [...state.templates, action.source],
       };
-    }
 
     case "INCREMENT_USED":
       return {
         ...state,
         templates: state.templates.map((t) =>
-          t.id === action.id
-            ? {
-                ...t,
-                timesUsed: t.timesUsed + 1,
-                updatedAt: new Date().toISOString(),
-              }
-            : t,
+          t.id === action.id ? { ...t, timesUsed: t.timesUsed + 1 } : t,
         ),
       };
 
@@ -125,13 +93,7 @@ function reducer(state: TemplateState, action: TemplateAction): TemplateState {
       return {
         ...state,
         templates: state.templates.map((t) =>
-          t.id === action.id
-            ? {
-                ...t,
-                timesReplied: t.timesReplied + 1,
-                updatedAt: new Date().toISOString(),
-              }
-            : t,
+          t.id === action.id ? { ...t, timesReplied: t.timesReplied + 1 } : t,
         ),
       };
 
@@ -168,75 +130,24 @@ function reducer(state: TemplateState, action: TemplateAction): TemplateState {
   }
 }
 
-function createMockTemplates(): MessageTemplate[] {
-  const now = new Date().toISOString();
-  return MOCK_TEMPLATES.map((t) => ({
-    ...t,
-    id: nanoid(),
-    createdAt: now,
-    updatedAt: now,
-  }));
-}
+type UseTemplatesInit = {
+  initialTemplates: MessageTemplate[];
+  initialCustomVariables: CustomVariable[];
+};
 
-export function useTemplates() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+export function useTemplates({
+  initialTemplates,
+  initialCustomVariables,
+}: UseTemplatesInit) {
+  const [state, dispatch] = useReducer(reducer, {
+    templates: initialTemplates,
+    customVariables: initialCustomVariables,
+    filters: { channel: "all", niche: "all", search: "" },
+    sortBy: "responseRate" as TemplateSortBy,
+  });
 
-  // Initialisation depuis localStorage ou mock data
-  useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    let templates: MessageTemplate[];
-
-    if (stored) {
-      try {
-        const parsed = JSON.parse(stored) as MessageTemplate[];
-        if (parsed.length > 0) {
-          templates = parsed;
-        } else {
-          templates = createMockTemplates();
-        }
-      } catch {
-        templates = createMockTemplates();
-      }
-    } else {
-      templates = createMockTemplates();
-    }
-
-    dispatch({ type: "INIT", templates });
-
-    const storedVars = localStorage.getItem(CUSTOM_VARIABLES_KEY);
-    if (storedVars) {
-      try {
-        const parsed = JSON.parse(storedVars) as CustomVariable[];
-        for (const v of parsed) {
-          dispatch({ type: "ADD_CUSTOM_VARIABLE", variable: v });
-        }
-      } catch {
-        // Ignorer les données corrompues
-      }
-    }
-  }, []);
-
-  // Persistance localStorage — templates
-  useEffect(() => {
-    if (state.initialized) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.templates));
-    }
-  }, [state.templates, state.initialized]);
-
-  // Persistance localStorage — variables custom
-  useEffect(() => {
-    if (state.initialized) {
-      localStorage.setItem(
-        CUSTOM_VARIABLES_KEY,
-        JSON.stringify(state.customVariables),
-      );
-    }
-  }, [state.customVariables, state.initialized]);
-
-  // Templates filtrés et triés
   const templates = useMemo(() => {
     let result = [...state.templates];
-
     const { channel, niche, search } = state.filters;
 
     if (channel !== "all") {
@@ -254,7 +165,6 @@ export function useTemplates() {
       );
     }
 
-    // Tri par défaut : meilleur taux de réponse en premier
     switch (state.sortBy) {
       case "responseRate":
         result.sort(
@@ -278,61 +188,154 @@ export function useTemplates() {
   }, [state.templates, state.filters, state.sortBy]);
 
   const addTemplate = useCallback(
-    (
-      template: Omit<
+    async (
+      input: Omit<
         MessageTemplate,
         "id" | "createdAt" | "updatedAt" | "timesUsed" | "timesReplied"
       >,
-    ) => dispatch({ type: "ADD", template }),
+    ) => {
+      const now = new Date().toISOString();
+      const optimisticId = nanoid(11);
+      const optimistic: MessageTemplate = {
+        ...input,
+        id: optimisticId,
+        timesUsed: 0,
+        timesReplied: 0,
+        createdAt: now,
+        updatedAt: now,
+      };
+      dispatch({ type: "ADD", template: optimistic });
+
+      try {
+        const created = await resolveActionResult(
+          createTemplateAction({
+            title: input.title,
+            channel: input.channel,
+            niche: input.niche,
+            content: input.content,
+          }),
+        );
+        dispatch({ type: "UPDATE_ID", oldId: optimisticId, newId: created.id });
+      } catch {
+        dispatch({ type: "DELETE", id: optimisticId });
+        toast.error("Erreur lors de la création du template");
+      }
+    },
     [],
   );
 
   const updateTemplate = useCallback(
-    (id: string, data: Partial<Omit<MessageTemplate, "id" | "createdAt">>) =>
-      dispatch({ type: "UPDATE", id, data }),
+    async (
+      id: string,
+      data: Partial<Omit<MessageTemplate, "id" | "createdAt">>,
+    ) => {
+      dispatch({ type: "UPDATE", id, data });
+
+      try {
+        await resolveActionResult(
+          updateTemplateAction({
+            id,
+            data: {
+              title: data.title,
+              channel: data.channel,
+              niche: data.niche,
+              content: data.content,
+            },
+          }),
+        );
+      } catch {
+        toast.error("Erreur lors de la mise à jour");
+      }
+    },
     [],
   );
 
   const deleteTemplate = useCallback(
-    (id: string) => dispatch({ type: "DELETE", id }),
-    [],
+    async (id: string) => {
+      const prev = state.templates.find((t) => t.id === id);
+      dispatch({ type: "DELETE", id });
+
+      try {
+        await resolveActionResult(deleteTemplateAction({ id }));
+      } catch {
+        if (prev) dispatch({ type: "ADD", template: prev });
+        toast.error("Erreur lors de la suppression");
+      }
+    },
+    [state.templates],
   );
 
   const duplicateTemplate = useCallback(
-    (id: string) => dispatch({ type: "DUPLICATE", id }),
-    [],
+    async (id: string) => {
+      const source = state.templates.find((t) => t.id === id);
+      if (!source) return;
+
+      const now = new Date().toISOString();
+      const optimisticId = nanoid(11);
+      const copy: MessageTemplate = {
+        ...source,
+        id: optimisticId,
+        title: `${source.title} (copie)`,
+        timesUsed: 0,
+        timesReplied: 0,
+        createdAt: now,
+        updatedAt: now,
+      };
+      dispatch({ type: "DUPLICATE", source: copy });
+
+      try {
+        const created = await resolveActionResult(
+          duplicateTemplateAction({ id }),
+        );
+        dispatch({ type: "UPDATE_ID", oldId: optimisticId, newId: created.id });
+      } catch {
+        dispatch({ type: "DELETE", id: optimisticId });
+        toast.error("Erreur lors de la duplication");
+      }
+    },
+    [state.templates],
   );
 
-  const incrementUsed = useCallback(
-    (id: string) => dispatch({ type: "INCREMENT_USED", id }),
-    [],
-  );
+  const incrementUsed = useCallback(async (id: string) => {
+    dispatch({ type: "INCREMENT_USED", id });
+    try {
+      await resolveActionResult(incrementUsedAction({ id }));
+    } catch {
+      toast.error("Erreur lors de la mise à jour");
+    }
+  }, []);
 
-  const incrementReplied = useCallback(
-    (id: string) => dispatch({ type: "INCREMENT_REPLIED", id }),
-    [],
-  );
+  const incrementReplied = useCallback(async (id: string) => {
+    dispatch({ type: "INCREMENT_REPLIED", id });
+    try {
+      await resolveActionResult(incrementRepliedAction({ id }));
+    } catch {
+      toast.error("Erreur lors de la mise à jour");
+    }
+  }, []);
 
-  const setFilter = useCallback(
-    (key: keyof TemplateFilters, value: string) =>
-      dispatch({ type: "SET_FILTER", key, value }),
-    [],
-  );
-
-  const setSortBy = useCallback(
-    (sortBy: TemplateSortBy) => dispatch({ type: "SET_SORT", sortBy }),
-    [],
-  );
-
-  const addCustomVariable = useCallback(
-    (variable: CustomVariable) =>
-      dispatch({ type: "ADD_CUSTOM_VARIABLE", variable }),
-    [],
-  );
+  const addCustomVariable = useCallback(async (variable: CustomVariable) => {
+    dispatch({ type: "ADD_CUSTOM_VARIABLE", variable });
+    try {
+      await resolveActionResult(addCustomVariableAction(variable));
+    } catch {
+      dispatch({ type: "DELETE_CUSTOM_VARIABLE", key: variable.key });
+      toast.error("Erreur lors de l'ajout de la variable");
+    }
+  }, []);
 
   const deleteCustomVariable = useCallback(
-    (key: string) => dispatch({ type: "DELETE_CUSTOM_VARIABLE", key }),
-    [],
+    async (key: string) => {
+      const prev = state.customVariables.find((v) => v.key === key);
+      dispatch({ type: "DELETE_CUSTOM_VARIABLE", key });
+      try {
+        await resolveActionResult(deleteCustomVariableAction({ key }));
+      } catch {
+        if (prev) dispatch({ type: "ADD_CUSTOM_VARIABLE", variable: prev });
+        toast.error("Erreur lors de la suppression");
+      }
+    },
+    [state.customVariables],
   );
 
   return {
@@ -347,8 +350,15 @@ export function useTemplates() {
     duplicateTemplate,
     incrementUsed,
     incrementReplied,
-    setFilter,
-    setSortBy,
+    setFilter: useCallback(
+      (key: keyof TemplateFilters, value: string) =>
+        dispatch({ type: "SET_FILTER", key, value }),
+      [],
+    ),
+    setSortBy: useCallback(
+      (sortBy: TemplateSortBy) => dispatch({ type: "SET_SORT", sortBy }),
+      [],
+    ),
     addCustomVariable,
     deleteCustomVariable,
   };

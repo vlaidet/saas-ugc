@@ -60,3 +60,38 @@ model BrandContact {
   @@index([brandId])
   @@map("brand_contact")
 }
+
+model MessageTemplate {
+  id           String @id @default(nanoid(11))
+  title        String
+  channel      String
+  niche        String
+  content      String
+  timesUsed    Int    @default(0)
+  timesReplied Int    @default(0)
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@map("message_template")
+}
+
+model CustomVariable {
+  id          String @id @default(nanoid(11))
+  key         String
+  label       String
+  placeholder String
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, key])
+  @@index([userId])
+  @@map("custom_variable")
+}

@@ -1,4 +1,8 @@
 import { getRequiredUser } from "@/lib/auth/auth-user";
+import {
+  getTemplatesByUserId,
+  getCustomVariablesByUserId,
+} from "@/query/pipeline/get-templates";
 import { MessagesPage } from "@/features/pipeline/messages-page";
 import { Suspense } from "react";
 
@@ -15,6 +19,15 @@ export default function Page() {
 }
 
 async function RoutePage() {
-  await getRequiredUser();
-  return <MessagesPage />;
+  const user = await getRequiredUser();
+  const [templates, customVariables] = await Promise.all([
+    getTemplatesByUserId(user.id),
+    getCustomVariablesByUserId(user.id),
+  ]);
+  return (
+    <MessagesPage
+      initialTemplates={templates}
+      initialCustomVariables={customVariables}
+    />
+  );
 }
